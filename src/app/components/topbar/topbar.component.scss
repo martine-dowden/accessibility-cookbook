@@ -6,6 +6,7 @@ div.banner {
   height: 3em;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   padding: 0 1rem;
 }
 
@@ -19,4 +20,9 @@ h1 {
   margin: 0;
   padding: 0;
   font-weight: 400;
+  span { display: none; }
+}
+
+@media( min-width: $small ) {
+  h1 span {display: inline; }
 }

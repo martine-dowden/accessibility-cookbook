@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, style, animate, transition, keyframes, state } from '@angular/animations';
-import { Subscription } from 'rxjs';
-import { ActivatedRoute } from "@angular/router";
 
 
 @Component({
@@ -47,22 +45,11 @@ import { ActivatedRoute } from "@angular/router";
 export class SidenavComponent implements OnInit {
 
   expanded = false;
-  sub: Subscription;
   category;
-
-  constructor(private route: ActivatedRoute) {
-
-  }
 
   ngOnInit() {
     console.log(window.innerWidth);
     this.manageNav(window.innerWidth);
-
-    this.sub = this.route.params.subscribe(params => {
-      console.log(params);
-      this.category = params['id'];
-   });
-   console.log(this.category);
   }
 
   onResize(event) {
@@ -75,8 +62,5 @@ export class SidenavComponent implements OnInit {
     else { this.expanded = false; }
   }
 
-  ngOnDestroy() {
-    this.sub.unsubscribe();
-  }
 
 }

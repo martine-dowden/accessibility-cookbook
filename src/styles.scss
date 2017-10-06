@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import 'assets/scss/theme';
 @import 'assets/scss/mixins';
 
 * { box-sizing: border-box }
@@ -11,9 +11,8 @@ body, html {
   margin: 0;
   font-family: 'Comfortaa', cursive;
   color: $primary-dark;
-  font-weight: 400;
+  font-weight: 300;
 }
-
 
 a,
 a:link,
@@ -21,13 +20,40 @@ a:visited {
   color: $secondary;
   text-decoration: none;
   font-variant: small-caps;
+  font-weight: 700;
   &:hover,
   &:focus {
-    color: $primary;
+    color: $secondary;
     text-decoration: underline;
   }
 }
 
-section{
+
+section {
   padding: 0 1rem;
 }
+
+p, li { line-height: 1.5rem; }
+
+cite {
+  display: block;
+  font-size: .75rem;
+  margin-bottom: .5rem;
+  text-indent: -1rem;
+  margin-left: 1rem;
+  a {
+    word-break: break-all;
+  }
+}
+p cite { 
+  display: inline;
+  margin: 0;
+  text-indent: 0;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+

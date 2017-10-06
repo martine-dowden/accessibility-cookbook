@@ -1,0 +1,37 @@
+<section [ngClass]="{'bad-contrast': !contrast}">
+  <div class="header ">
+    <h2>Color Contrast</h2>
+    <div>
+      <span *ngIf="contrast">contrast ration is: 11.13 : 1</span>
+      <span *ngIf="!contrast">contrast ration is: 2.99 : 1</span>
+      <button type="button" mat-button color="accent" (click)="toggleContrast()">
+        <span *ngIf="contrast">Break Contrast Ration</span>
+        <span *ngIf="!contrast">Fix Contrast Ratio</span>
+      </button> 
+    </div>
+  </div>
+  <p>By using contrast, light versus dark or bright versus dull, emphasis can be placed on one element over the others <cite>(Landa 2011)</cite>. When considering the use of color, contrast refers to the value and saturation of the text compared to its background. Is the text easy to read or does the color interfere with reading speed and legibility <cite>(Cronin, 2009)</cite>. The industry has some hard-set rules regarding contrast. Both section 508 and WCAG dictate a 4.5:1 luminosity ratio between text and background. <cite>(HTML 508 Checklist, 2013)</cite> <cite>(Contrast (Minimum): Understanding SC 1.4.3, 2017)</cite>.</p>
+
+  <p>The intent is to helps provide users with moderately low visuion or color dificiencies, which affect roughly 8% of men and 0.5% of women or about 13 million Americans <cite>(Colorblind Pupulation, 2017)</cite> with enough contrast between the text and background to read the content.</p>
+
+  <h3>Demo</h3>
+  <p>Side by side passing and failling contrast ration:</p>
+
+  <div class="demo">
+    <div> 2.25 : 1 (Fail)</div>
+    <div> 4.5 : 1 (AA)</div>
+    <div> 7.02 : 1 (AAA)</div>
+  </div>
+
+  <div class="works-cited">
+    <cite id="landa">Landa, R. (2011). Graphic Design Solutions (4th Edition ed.). Boston, MA: Wadsworth: Cengage Learning.</cite>
+    <cite>Cronin, M. (2009, 03 18). 10 Principles For Readable Web Typography. Retrieved 02 13,
+        2014, from Smashing Magazine: <a href="http://www.smashingmagazine.com/2009/03/18/10-principles-for-readable-web-typography/" target="_blank" rel="noopener">http://www.smashingmagazine.com/2009/03/18/10-
+          principles-for-readable-web-typography/</a></cite>
+    <cite>HTML 508 Checklist. (2013, 03). Retrieved 02 13, 2014, from HHS.gov:
+        <a href="http://www.hhs.gov/web/508/accessiblefiles/checklisthtml.html" target="_blank" rel="noopener">http://www.hhs.gov/web/508/accessiblefiles/checklisthtml.html</a></cite>
+    <cite>Contrast (Minimum): Understanding SC 1.4.3. Retrieved 06 10, 2017, from Understanding WCAG 2.0: <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html" target="_blank" rel="noopener">https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html</a></cite>
+    <cite>Colorblind Population. Retrieved 06 10, 2017, from Colblindor: <a href="http://www.color-blindness.com/2006/04/28/colorblind-population/" target="_blank" rel="noopener">http://www.color-blindness.com/2006/04/28/colorblind-population/</a></cite>
+  </div>
+
+</section>

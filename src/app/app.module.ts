@@ -9,9 +9,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 
-import { MatTooltipModule } from '@angular/material';
+import { MatTooltipModule, MatButtonModule } from '@angular/material';
 import 'hammerjs';
 import { TopbarComponent } from './components/topbar/topbar.component';
+import { ColorContrastComponent } from './components/color-contrast/color-contrast.component';
 
 
 @NgModule({
@@ -19,14 +20,16 @@ import { TopbarComponent } from './components/topbar/topbar.component';
     AppComponent,
     HomeComponent,
     SidenavComponent,
-    TopbarComponent
+    TopbarComponent,
+    ColorContrastComponent,
   ],
   imports: [
     BrowserModule,
     AppRouting,
     BrowserAnimationsModule,
 
-    MatTooltipModule
+    MatTooltipModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

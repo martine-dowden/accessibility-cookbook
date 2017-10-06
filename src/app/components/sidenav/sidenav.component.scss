@@ -11,6 +11,7 @@ a, a:link, a:visited {
   }
   &.active {
     background: $grey300;
+    color: $primary;
   }
 }
 
@@ -25,7 +26,7 @@ button {
 }
 
 nav {
-  position: relative;
+  position: absolute;
   z-index: 2;
   ul {
     background: white;
@@ -44,6 +45,9 @@ nav {
 .content { padding: 0 1.5rem }
 
 @media ( min-width: $small ) {
+  nav {
+    position: relative;
+  }
   button { display: none }
   .container {
     display: flex;
