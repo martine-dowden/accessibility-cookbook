@@ -1,0 +1,25 @@
+@import '../assets/scss/mixins';
+
+.container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 3rem;
+}
+
+@media ( min-width: $small ) {
+  .container {
+    display: flex;
+  }
+  app-sidenav {
+    flex-basis: 12rem;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border-right: solid 1px $grey300;
+  }
+  main { 
+    background: $background;
+    flex-grow: 1;
+  }
+}

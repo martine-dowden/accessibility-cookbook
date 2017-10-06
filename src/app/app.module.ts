@@ -11,13 +11,15 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 import { MatTooltipModule } from '@angular/material';
 import 'hammerjs';
+import { TopbarComponent } from './components/topbar/topbar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    SidenavComponent
+    SidenavComponent,
+    TopbarComponent
   ],
   imports: [
     BrowserModule,

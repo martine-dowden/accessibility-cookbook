@@ -1,15 +1,15 @@
-<button type="button" type="button" (window:resize)="onResize($event)" (click)="toggleNav()" [attr.aria-expanded]="expanded" aria-controls="collapsible-0">
+<button type="button" type="button" (window:resize)="onResize($event)" (click)="toggleNav()" [attr.aria-expanded]="expanded" [attr.aria-controls]="'nav'">
   <i class="material-icons" aria-label="toggle menu" matTooltip="toggle menu">menu</i>
 </button>
-<nav *ngIf="expanded" id="collapsible-0" [attr.aria-hidden]="!expanded" [@flyInOut]>
-  <a [routerLink]="color-contrast">Color Contrast</a>
-  <a [routerLink]="alt-text">Alt Text</a>
-  <a [routerLink]="form-labels">Form Labels</a>
-  <a [routerLink]="focus">Focus</a>
-  <a [routerLink]="html-header-tags">HTML Header Tags</a>
-  <a [routerLink]="links-and-buttons">Links and Buttons</a>
-  <a [routerLink]="ambiguous-links">Ambiguous Links</a>
-  <a [routerLink]="special-characters">Content and Special Characters</a>
-  <a [routerLink]="navigation">Navigation</a>
-  <a [routerLink]="animations">Animations</a>
+<nav *ngIf="expanded" id="nav" [attr.aria-hidden]="!expanded" [@flyInOut]>
+  <a [routerLink]="color_contrast" [ngClass]="{'active': category === 'color_contrast'}">Color Contrast</a>
+  <a [routerLink]="alt_text" [ngClass]="{'active': category === 'alt_text'}">Alt Text</a>
+  <a [routerLink]="form_labels" [ngClass]="{'active': category === 'form_labels'}">Form Labels</a>
+  <a [routerLink]="focus" [ngClass]="{'active': category === 'focus'}">Focus</a>
+  <a [routerLink]="html_header_tags" [ngClass]="{'active': category === 'html_header_tags'}">HTML Header Tags</a>
+  <a [routerLink]="links_and_buttons" [ngClass]="{'active': category === 'links_and_buttons'}">Links and Buttons</a>
+  <a [routerLink]="ambiguous_links" [ngClass]="{'active': category === 'ambiguous_links'}">Ambiguous Links</a>
+  <a [routerLink]="special_characters" [ngClass]="{'active': category === 'special_characters'}">Content and Special Characters</a>
+  <a [routerLink]="navigation" [ngClass]="{'active': category === 'navigation'}">Navigation</a>
+  <a [routerLink]="animations" [ngClass]="{'active': category === 'animations'}">Animations</a>
 </nav>
