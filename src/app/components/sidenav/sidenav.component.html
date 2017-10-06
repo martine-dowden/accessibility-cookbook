@@ -1,0 +1,15 @@
+<button type="button" type="button" (window:resize)="onResize($event)" (click)="toggleNav()" [attr.aria-expanded]="expanded" aria-controls="collapsible-0">
+  <i class="material-icons" aria-label="toggle menu" matTooltip="toggle menu">menu</i>
+</button>
+<nav *ngIf="expanded" id="collapsible-0" [attr.aria-hidden]="!expanded" [@flyInOut]>
+  <a [routerLink]="color-contrast">Color Contrast</a>
+  <a [routerLink]="alt-text">Alt Text</a>
+  <a [routerLink]="form-labels">Form Labels</a>
+  <a [routerLink]="focus">Focus</a>
+  <a [routerLink]="html-header-tags">HTML Header Tags</a>
+  <a [routerLink]="links-and-buttons">Links and Buttons</a>
+  <a [routerLink]="ambiguous-links">Ambiguous Links</a>
+  <a [routerLink]="special-characters">Content and Special Characters</a>
+  <a [routerLink]="navigation">Navigation</a>
+  <a [routerLink]="animations">Animations</a>
+</nav>

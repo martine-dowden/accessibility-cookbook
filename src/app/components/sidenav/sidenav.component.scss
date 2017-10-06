@@ -1,0 +1,49 @@
+@import '../../../assets/scss/mixins';
+
+a, a:link, a:visited { 
+  display: block;
+  padding: .75rem 1rem;
+  border-bottom: solid 1px $grey300;
+  &:hover, &:focus {
+    text-decoration: none;
+    background: $secondary;
+    color: $text-light;
+  }
+  &.active {
+    background: $grey300;
+  }
+}
+
+button {
+  background: $primary;
+  color: $text-light;
+  text-align: right;
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 1rem 1.5rem;
+}
+
+nav {
+  position: relative;
+  z-index: 2;
+  ul {
+    background: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;	
+  }
+  li {
+    list-style-type: none;
+  }
+  
+}
+
+.content { padding: 0 1.5rem }
+
+@media ( min-width: $small ) {
+  button { display: none }
+}
+
