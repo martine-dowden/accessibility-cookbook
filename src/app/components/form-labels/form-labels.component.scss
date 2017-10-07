@@ -1,0 +1,24 @@
+@import '../../../assets/scss/mixins';
+
+h2 { padding: 0 1rem }
+
+.demo {
+  background: lighten($secondary-light, 30%);
+  padding: 1rem;
+  margin: 0 -1rem;
+}
+form {
+  @include card;
+  .actions { margin: 1rem 0 0 0; }
+}
+mat-form-field { 
+  display: block;
+  width: 100%;
+}
+
+@media( min-width: $small ) {
+  form { 
+    width: 30rem;
+    margin: 0 auto;
+  }
+}

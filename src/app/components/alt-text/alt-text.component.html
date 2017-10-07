@@ -1,13 +1,19 @@
 <section>
-  <div class="header">
-    <h2>Alt Text</h2>
-    <p>To allow users utilizing assistive technologies such as screen readers to know what images on a website represent, alternative text must be provided.</p>
-    <div>
-      <button mat-raised-button color="accent" (click)="makeAccessible()">
-        <span *ngIf="!accessible">Make Image Accessible</span>
-        <span *ngIf="accessible">Break Image Accessibility</span>
-      </button>
-    </div>
+  <h2>Alt Text</h2>
+  <div class="spec">
+    <blockquote>
+      <p>"1.4.9 Images of Text (No Exception): Images of text are only used for pure decoration or where a particular presentation of text is essential to the information being conveyed. (Level AAA)</p>
+      <p><em>Note:</em> Logotypes (text that is part of a logo or brand name) are considered essential."</p>
+    </blockquote>
+    <cite><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-text-images.html">WCAG 2.0 Success Criteria 1.4.9</a></cite>
+  </div>
+  <p>To allow users utilizing assistive technologies such as screen readers to know what images on a website represent, alternative text must be provided.</p>
+  <h3>Demo</h3>
+  <div class="actions">
+    <button mat-raised-button color="accent" (click)="makeAccessible()">
+      <span *ngIf="!accessible">Make Image Accessible</span>
+      <span *ngIf="accessible">Break Image Accessibility</span>
+    </button>
   </div>
   <div class="tp-wrapper" #wrapper (window:resize)="onResize($event)">
     <div class="tp-box" [@flipState]="flip">
@@ -21,7 +27,7 @@
       </div>
     </div>
   </div>
-  
+
   <h3>The HTML</h3>
   <p>The alt attribute should provide a description of the image. If content is found within the image, the content should also be available in the alt tag. Same for complex diagram. The same information that is conveyed in the diagram should be available to the user via the alt text.</p>
   <code>&#x3C;img src=&#x22;stairs.png&#x22; alt=&#x22;Dilapidated stairs.&#x22;&#x3E;</code>
@@ -39,4 +45,4 @@
     <cite>Images Concepts. (n.d.). Retrieved October 07, 2017, from <a href="https://www.w3.org/WAI/tutorials/images/" target="_blank" rel="noopener">https://www.w3.org/WAI/tutorials/images/</a></cite>
     <cite>Use the alt attribute for your images. (n.d.). Retrieved October 07, 2017, from <a href="https://www.w3.org/QA/Tips/altAttribute" target="_blank" rel="noopener">https://www.w3.org/QA/Tips/altAttribute</a></cite>
   </div>
-</section>
+  </section>

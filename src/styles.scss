@@ -30,7 +30,7 @@ a:visited {
 }
 
 
-section {
+section, .section {
   padding: 0 1rem;
 }
 
@@ -80,6 +80,28 @@ code {
 
 .works-cited {
   margin: 3rem 0 1rem;
+}
+
+.actions {
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
+.spec {
+  @include card;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  h3 { margin: 0; color: $secondary; }
+  blockquote { margin: 0; }
+  cite { text-align: right; }
+}
+
+strong { color: $primary; }
+
+hr {  
+  border: 0;
+  height: 1px;
+  background: lighten($secondary-light, 20%);
 }
 
 @media ( min-width: $small ) {
