@@ -6,6 +6,7 @@
   right: 0;
   bottom: 0;
   top: 3rem;
+  overflow-y: hidden; 
 }
 
 @media ( min-width: $small ) {
@@ -17,6 +18,7 @@
     flex-shrink: 0;
     flex-grow: 0;
     border-right: solid 1px $grey300;
+    overflow-y: auto;
   }
   main { 
     background: $background;

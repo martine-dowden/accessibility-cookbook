@@ -1,6 +1,6 @@
 @import '../../../assets/scss/mixins';
 
-div.banner { 
+div.banner a { 
   background: $primary;
   color: $text-light;
   height: 3em;
@@ -13,6 +13,12 @@ div.banner {
 i { 
   font-size: 2rem;
   margin-right: 1rem;
+  text-decoration: none;
+}
+
+a:hover, a:focus, a:link:hover, a:link:focus, a:visited:hover, a:visited:focus {
+  text-decoration: none;
+  i { text-decoration: none; }
 }
 
 h1 {
@@ -26,3 +32,4 @@ h1 {
 @media( min-width: $small ) {
   h1 span {display: inline; }
 }
+

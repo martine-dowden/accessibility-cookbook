@@ -27,7 +27,9 @@ button {
 
 nav {
   position: absolute;
-  z-index: 2;
+  top: 3rem; right: 0; bottom: 0; left: 0;
+  background: white;
+  z-index: 500;
   ul {
     background: white;
     position: absolute;
@@ -47,6 +49,7 @@ nav {
 @media ( min-width: $small ) {
   nav {
     position: relative;
+    top: 0;
   }
   button { display: none }
   .container {

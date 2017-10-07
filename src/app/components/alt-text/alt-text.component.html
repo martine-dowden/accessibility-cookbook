@@ -1,0 +1,33 @@
+<section>
+  <div class="header">
+    <h2>Alt Text</h2>
+    <p>To allow users utilizing assistive technologies such as screen readers to know what images on a website represent, alternative text must be provided.</p>
+    <div>
+      <button mat-raised-button color="accent" (click)="makeAccessible()">
+        <span *ngIf="!accessible">Make Image Accessible</span>
+        <span *ngIf="accessible">Break Image Accessibility</span>
+      </button>
+    </div>
+  </div>
+  <div class="tp-wrapper" #wrapper (window:resize)="onResize($event)">
+    <div class="tp-box" [@flipState]="flip">
+      <div class="tp-box__side tp-box__front" [attr.aria-hidden]="accessible">
+        <img (load)="onResize($event)" #stairs id="stairs" src="../../../assets/img/stairs.png">
+        <caption #captionA ><code>&#x3C;img src=&#x22;stairs.png&#x22;&#x3E;</code></caption>
+      </div>
+      <div class="tp-box__side tp-box__back" [attr.aria-hidden]="accessible">
+        <img src="../../../assets/img/pittock-mansion-stairs.png" alt="Pittock Mansion grand staircase">
+        <caption #captionN><code>&#x3C;img src=&#x22;img/stairs.png&#x22; alt=&#x22;Pittock Mansion grand staircase, Oregon&#x22;&#x3E;</code></caption>
+      </div>
+    </div>
+  </div>
+  
+  <h3>The HTML</h3>
+  <code>&#x3C;img src=&#x22;stairs.png&#x22; alt=&#x22;Dilapidated stairs.&#x22;&#x3E;</code>
+  <p>If the image does not add any additional information to the page, or is as a purely decorative image the alt text should be left blank.</p>
+  <code>&#x3C;img src=&#x22;border.png&#x22; alt=&#x22;&#x22;&#x3E;</code>
+  <p>ARIA can instead be used to alert the screen reader of the image’s irrelevance to the content.</p>
+  <code>&#x3C;img src=&#x22;border.png&#x22; role=&#x22;presentation&#x22;&#x3E;</code>
+  <p>Although role=”presentation” is not as widely supported as using a null alt attribute (W3C, 2015).</p>
+  <p>Another perk to proper use of alternative text on images is improved SEO.</p>
+</section>

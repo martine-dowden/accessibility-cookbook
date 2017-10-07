@@ -2,12 +2,12 @@
   <div class="header ">
     <h2>Color Contrast</h2>
     <div>
-      <span *ngIf="contrast">contrast ration is: 11.13 : 1</span>
-      <span *ngIf="!contrast">contrast ration is: 2.99 : 1</span>
-      <button type="button" mat-button color="accent" (click)="toggleContrast()">
+      <button type="button" mat-raised-button color="accent" (click)="toggleContrast()">
         <span *ngIf="contrast">Break Contrast Ration</span>
         <span *ngIf="!contrast">Fix Contrast Ratio</span>
-      </button> 
+      </button>
+      <span *ngIf="contrast">contrast ration is: 11.13 : 1</span>
+      <span *ngIf="!contrast">contrast ration is: 2.99 : 1</span>
     </div>
   </div>
   <p>By using contrast, light versus dark or bright versus dull, emphasis can be placed on one element over the others <cite>(Landa 2011)</cite>. When considering the use of color, contrast refers to the value and saturation of the text compared to its background. Is the text easy to read or does the color interfere with reading speed and legibility <cite>(Cronin, 2009)</cite>. The industry has some hard-set rules regarding contrast. Both section 508 and WCAG dictate a 4.5:1 luminosity ratio between text and background. <cite>(HTML 508 Checklist, 2013)</cite> <cite>(Contrast (Minimum): Understanding SC 1.4.3, 2017)</cite>.</p>

@@ -12,6 +12,7 @@ body, html {
   font-family: 'Comfortaa', cursive;
   color: $primary-dark;
   font-weight: 300;
+  font-size: 100%;
 }
 
 a,
@@ -31,6 +32,12 @@ a:visited {
 
 section {
   padding: 0 1rem;
+}
+
+main {
+  overflow-y: scroll;
+  position: absolute;
+  top: 3rem; right: 0; bottom: 0; left: 0;
 }
 
 p, li { line-height: 1.5rem; }
@@ -57,3 +64,23 @@ p cite {
   clear: both;
 }
 
+img {
+  max-width: 100%;
+}
+
+code {
+  background: $primary-dark;
+  color: $text-light;
+  padding: 1rem;
+  display: block;
+  border-radius: .125rem;
+  font-weight: lighter;
+  font-size: 1.125rem;
+}
+
+@media ( min-width: $small ) {
+  main {
+    left: 12rem;
+    top: 0;
+  }
+}

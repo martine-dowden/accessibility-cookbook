@@ -13,6 +13,7 @@ import { MatTooltipModule, MatButtonModule } from '@angular/material';
 import 'hammerjs';
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { ColorContrastComponent } from './components/color-contrast/color-contrast.component';
+import { AltTextComponent } from './components/alt-text/alt-text.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { ColorContrastComponent } from './components/color-contrast/color-contra
     SidenavComponent,
     TopbarComponent,
     ColorContrastComponent,
+    AltTextComponent,
   ],
   imports: [
     BrowserModule,

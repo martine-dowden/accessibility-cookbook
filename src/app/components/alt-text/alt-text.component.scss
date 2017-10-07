@@ -1,0 +1,49 @@
+@import '../../../assets/scss/mixins';
+
+
+caption {
+  display: block;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 1rem;
+  div { text-align: right; }
+}
+
+//  Animation
+
+.tp-wrapper {
+  position: relative;
+  perspective: 800px;
+  width: 100%;
+  z-index: 5;
+  background: lighten($secondary-light, 30%);
+  padding: 1rem 0;
+  border-radius: .125rem;
+}
+
+.tp-box {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+
+}
+
+.tp-box__side {
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  text-align: center;
+  user-select: none;
+}
+
+.tp-box__back {
+  transform: rotateY(179.9deg);
+}

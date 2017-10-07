@@ -2,7 +2,7 @@
 
 .header { 
   div { text-align: right; }
-  span {  display: inline-block; vertical-align: baseline; padding-top: .5rem; }
+  span {  display: block; margin: .5rem; }
 }
 h2 { margin-bottom: 0; }
 
@@ -12,9 +12,6 @@ h2 { margin-bottom: 0; }
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
-  }
-  button { 
-    float: none;
   }
 }
 
