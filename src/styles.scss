@@ -73,8 +73,8 @@ code {
   line-height: 2rem;
   font-size: 1.125rem;
   &.hljs {
-    background: none;
-    padding: 0;
+    padding: 1rem;
+    margin: 0 -1rem;
   }
 }
 pre { margin: 0 }
