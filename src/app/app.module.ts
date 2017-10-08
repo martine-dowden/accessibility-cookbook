@@ -18,6 +18,7 @@ import { TopbarComponent } from './components/topbar/topbar.component';
 import { ColorContrastComponent } from './components/color-contrast/color-contrast.component';
 import { AltTextComponent } from './components/alt-text/alt-text.component';
 import { FormLabelsComponent } from './components/form-labels/form-labels.component';
+import { FocusComponent } from './components/focus/focus.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FormLabelsComponent } from './components/form-labels/form-labels.compon
     ColorContrastComponent,
     AltTextComponent,
     FormLabelsComponent,
+    FocusComponent,
   ],
   imports: [
     BrowserModule,

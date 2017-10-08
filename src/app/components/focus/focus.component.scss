@@ -1,0 +1,102 @@
+@import '../../../assets/scss/mixins';
+@mixin hover-focus {
+  background: $primary-light;
+  color: white;
+  transform: scale(1.2);
+  transform-origin: 0 100%;
+  animation-duration: 100ms;
+  animation-timing-function: ease-in;
+  animation-name: grow;
+  &:nth-of-type(2) { transform-origin: 50% 100%; }
+  &:nth-of-type(3) { transform-origin: 100% 100%; }
+}
+
+@keyframes grow {
+  from { transform: scale(1) }
+  to { transform: scale(1.2) }
+}
+
+
+.demo {
+  padding: 0;
+  background: lighten($secondary-light, 30%);
+  position: relative;
+  margin: 0 -1rem 1rem;
+  div:first-of-type {
+    display: flex;
+    border-top: solid .0625rem $secondary;
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  button {
+    flex-grow: 1;
+    border: none;
+    background: none;
+    padding: 1rem;
+    font-size: .875rem;
+    background: white;
+    cursor: pointer;
+    &.active {
+      background: $secondary;
+      color: white;
+    }
+    &:hover {
+      @include hover-focus();
+    }
+  }
+  img {
+    margin: 0 auto;
+    width: 800px;
+    max-width: 100%;
+  }
+}
+
+.demo.has-focus {
+  button:focus {
+    @include hover-focus();
+  }
+}
+
+.image-container {
+  width: 800px;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.demo-button {
+  padding: .75rem 1rem;
+  background: $primary;
+  color: white;
+  font-size: 1rem;
+  border: solid .0625rem $primary;
+  border-radius: .125rem;
+  cursor: pointer;
+  box-shadow: 0 .0625rem .1875rem 0 rgba(0,0,0,0.12),
+              0 .0625rem .125rem 0 rgba(0,0,0,0.24);
+}
+
+.demo-button:hover,
+.demo-button:focus {
+  background: lighten($primary-light, 35%);
+  color: $primary;
+  border: solid .0625rem lighten($primary-light, 35%);
+}
+
+.demo-button:active {
+  background: lighten($primary-light, 35%);
+  color: $primary;
+  border: solid .0625rem lighten($primary-light, 35%);
+  box-shadow: none;
+  position: relative;
+  top: .125rem;
+  left: .125rem;
+}
+
+@media(min-width: $small) {
+  .demo { 
+    padding: 1rem;
+    div:first-of-type { border: none; }
+  }
+}

@@ -1,22 +1,9 @@
 @import '../../../assets/scss/mixins';
 
-.header { 
-  div { text-align: right; }
-  span {  display: block; margin: .5rem; }
-}
-h2 { margin-bottom: 0; }
-
-@media (min-width: $small) {
-  .header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: baseline;
-  }
-}
+.actions div { margin-top: .75rem; }
 
 .bad-contrast p {
-  color: $secondary-light;
+  color: lighten($secondary-light, 20% );
 }
 
 .demo {

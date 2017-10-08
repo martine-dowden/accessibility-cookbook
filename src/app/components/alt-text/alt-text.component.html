@@ -1,5 +1,6 @@
+<h2>Alt Text</h2>
 <section>
-  <h2>Alt Text</h2>
+  <h3>Overview &amp; Demo</h3>
   <div class="spec">
     <blockquote>
       <p>"1.4.9 Images of Text (No Exception): Images of text are only used for pure decoration or where a particular presentation of text is essential to the information being conveyed. (Level AAA)</p>
@@ -8,7 +9,7 @@
     <cite><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-text-images.html">WCAG 2.0 Success Criteria 1.4.9</a></cite>
   </div>
   <p>To allow users utilizing assistive technologies such as screen readers to know what images on a website represent, alternative text must be provided.</p>
-  <h3>Demo</h3>
+  <h4>Demo</h4>
   <div class="actions">
     <button mat-raised-button color="accent" (click)="makeAccessible()">
       <span *ngIf="!accessible">Make Image Accessible</span>
@@ -28,6 +29,9 @@
     </div>
   </div>
 
+</section>
+<section>
+
   <h3>The HTML</h3>
   <p>The alt attribute should provide a description of the image. If content is found within the image, the content should also be available in the alt tag. Same for complex diagram. The same information that is conveyed in the diagram should be available to the user via the alt text.</p>
   <code>&#x3C;img src=&#x22;stairs.png&#x22; alt=&#x22;Dilapidated stairs.&#x22;&#x3E;</code>
@@ -37,6 +41,9 @@
   <code>&#x3C;img src=&#x22;border.png&#x22; role=&#x22;presentation&#x22;&#x3E;</code>
   <p>Although role=”presentation” is not as widely supported as using a null alt attribute (W3C, 2015).</p>
   <p>Another perk to proper use of alternative text on images is improved SEO.</p>
+
+</section>
+<section>
 
   <div class="works-cited">
     <h3>Resources</h3>

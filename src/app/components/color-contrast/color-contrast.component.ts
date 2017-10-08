@@ -13,4 +13,6 @@ export class ColorContrastComponent {
     this.contrast = !this.contrast;
   }
 
+
+
 }
