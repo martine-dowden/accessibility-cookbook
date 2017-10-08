@@ -52,10 +52,11 @@ cite {
     word-break: break-all;
   }
 }
-p cite { 
+p cite, legend cite { 
   display: inline;
   margin: 0;
   text-indent: 0;
+  font-size: inherit;
 }
 
 .clearfix:after {
@@ -69,13 +70,17 @@ img {
 }
 
 code {
-  background: $primary-dark;
-  color: $text-light;
-  padding: 1rem;
-  display: block;
-  border-radius: .125rem;
-  font-weight: lighter;
+  line-height: 2rem;
   font-size: 1.125rem;
+  &.hljs {
+    background: none;
+    padding: 0;
+  }
+}
+pre { margin: 0 }
+
+fieldset {
+  border-color: lighten($secondary, 30%);
 }
 
 .works-cited {
@@ -87,13 +92,18 @@ code {
   margin-bottom: 1rem;
 }
 
-.spec {
+.spec, .spec-technique {
   @include card;
   padding: 2rem;
   margin-bottom: 2rem;
   h3 { margin: 0; color: $secondary; }
   blockquote { margin: 0; }
   cite { text-align: right; }
+}
+
+.spec-technique {
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
 }
 
 strong { color: $primary; }

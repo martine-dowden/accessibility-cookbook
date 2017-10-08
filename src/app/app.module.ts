@@ -12,11 +12,12 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 import { MatTooltipModule, MatButtonModule, MatInputModule, MatSnackBarModule } from '@angular/material';
 import 'hammerjs';
+import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
+
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { ColorContrastComponent } from './components/color-contrast/color-contrast.component';
 import { AltTextComponent } from './components/alt-text/alt-text.component';
 import { FormLabelsComponent } from './components/form-labels/form-labels.component';
-
 
 @NgModule({
   declarations: [
@@ -33,13 +34,14 @@ import { FormLabelsComponent } from './components/form-labels/form-labels.compon
     AppRouting,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    HighlightJsModule,
 
     MatTooltipModule,
     MatButtonModule,
     MatInputModule,
     MatSnackBarModule
   ],
-  providers: [],
+  providers: [HighlightJsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

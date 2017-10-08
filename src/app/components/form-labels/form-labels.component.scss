@@ -6,18 +6,19 @@ h2 { padding: 0 1rem }
   background: lighten($secondary-light, 30%);
   padding: 1rem;
   margin: 0 -1rem;
+  form {
+    @include card;
+    .actions { margin: 1rem 0 0 0; }
+  }
 }
-form {
-  @include card;
-  .actions { margin: 1rem 0 0 0; }
-}
+
 mat-form-field { 
   display: block;
   width: 100%;
 }
 
 @media( min-width: $small ) {
-  form { 
+  .demo form { 
     width: 30rem;
     margin: 0 auto;
   }
