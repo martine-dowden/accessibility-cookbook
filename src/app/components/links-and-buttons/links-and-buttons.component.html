@@ -1,0 +1,95 @@
+<h2>Links and Buttons: neither are divs or spans</h2>
+<section>
+  <h3>Overview</h3>
+  <div class="spec">
+    <p><strong>Link</strong>: <q>An interactive reference to an internal or external resource that, when activated, causes the user agent to navigate to that resource.</q></p>
+    <p><strong>Button</strong>: <q>An input that allows for user-triggered actions when clicked or pressed.</q></p>
+    <cite><a href="https://www.w3.org/TR/wai-aria/roles#link" target="_blank" rel="noopener">Accessible Rich Internet Applications (WAI-ARIA) 1.0: The Role Model</a></cite>
+  </div>
+
+  <div class="demo">
+    <h4>What am I?</h4>
+    <p>Click me to find out.</p>
+    <div class="button" (click)="toggleClickMe()">Click Me</div>
+    <p *ngIf="clickMe">I'm actually a div, and if you try to tab to me you will realize that I cannot be tabbed too via keyboard.</p>
+  </div>
+
+  <p>The problem with using &#x3C;div&#x3E; or &#x3C;span&#x3E; when a link or a div would be appropriate is the lack of availability in taborder, making them lack keyboard accessibility without extra work. Furthermore, <code>&#x3C;div&#x3E;</code> and <code>&#x3C;span&#x3E;</code> do not expose the approapriate attributes to the scren readers.</p>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Requirement</th>
+        <th scope="col"><code>&#x3C;div&#x3E;</code> &amp; <code>&#x3C;span&#x3E;</code></th>
+        <th scope="col"><code>&#x3C;a&#x3E;</code> &amp; <code>&#x3C;button&#x3E;</code></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Natively keyboard accessible</td>
+        <td>No</td>
+        <td>Yes<br>(for <code>&#x3C;a&#x3E;</code>, only when href present)</td>
+      </tr>
+      <tr>
+        <td>Sufficient Color Contrast</td>
+        <td>Design Dependent</td>
+        <td>Design Dependent
+          <br>(unless using native BUTTON with no CSS)</td>
+      </tr>
+      <tr>
+        <td>Exposes appropriate name, state, role, value</td>
+        <td>No</td>
+        <td>Yes</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <h3>How to choose?</h3>
+  <div class="choose">
+    <div class="actions"><button mat-raised-button type="button" (click)="reset()">Reset</button></div>
+    <div class="question">
+      <p>Are you trying to navigate the user to somewhere?</p>
+      <div class="actions">
+        <button type="button" mat-button color="accent"  [ngClass]="{'active': link === false}" (click)="isNavigate(false)">No</button>
+        <button type="button" mat-button color="primary" [ngClass]="{'active': link}"  (click)="isNavigate(true)">Yes</button>
+      </div>
+    </div>
+    <div *ngIf="link || buttonQuestion" class="line"></div>
+    <div class="response" *ngIf="link">
+      <p>Since you are navigating, use a <strong>Link</strong>.</p>
+      <code>&#x3C;a href=&#x22;&#x22;&#x3E;&#x3C;/a&#x3E;</code>
+    </div>
+    <div class="question" *ngIf="buttonQuestion">
+      <p>Ok, not navigating.</p>
+      <p>Is clicking the element going to intiate an action?</p>
+      <div class="actions">
+        <button type="button" mat-button color="accent" [ngClass]="{'active': button === false}" (click)="isButton(false)">No</button>
+        <button type="button" mat-button color="primary" [ngClass]="{'active': button}" (click)="isButton(true)">Yes</button>
+      </div>
+    </div>
+    <div *ngIf="button || neither" class="line"></div>
+    <div class="response" *ngIf="button">
+      <p>Since you are triggering an action, use a <strong>Button</strong></p>
+      <code>&#x3C;button type=&#x22;&#x22;&#x3E;&#x3C;/button&#x3E;</code>
+    </div>
+    <div class="response" *ngIf="neither">
+      <p>Not an action?</p>
+      <p>Not navigating?</p>
+      <p>Sorry, not sure what you are trying to do, maybe the following links can help you out.</p>
+      <ul>
+        <li><a href="https://www.w3.org/TR/wai-aria/roles#button" target="_blank" rel="noopener">WAI-ARIA Roles: Button</a></li>
+        <li><a href="https://www.w3.org/TR/wai-aria/roles#link" target="_blank" rel="noopener">WAI-ARIA Roles: Link</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="works-cited">
+    <h3>Resources</h3>
+    <cite>12 Links. (n.d.). Retrieved October 09, 2017, from <a href="https://www.w3.org/TR/html401/struct/links.html#edef-LINK" target="_blank" rel="noopener">https://www.w3.org/TR/html401/struct/links.html#edef-LINK</a></cite>
+    <cite>5. The Roles Model. (n.d.). Retrieved October 09, 2017, from <a href="https://www.w3.org/TR/wai-aria/roles#link" target="_blank" rel="noopener">https://www.w3.org/TR/wai-aria/roles#link</a></cite>
+    <cite>HTML5. (n.d.). Retrieved October 09, 2017, from <a href="https://www.w3.org/TR/html5/editing.html" target="_blank" rel="noopener">https://www.w3.org/TR/html5/editing.html</a></cite>
+    <cite>Links are not buttons. Neither are DIVs and SPANs. (2013, November 25). Retrieved October 09, 2017, from <a href="http://www.karlgroves.com/2013/05/14/links-are-not-buttons-neither-are-divs-and-spans/" target="_blank" rel="noopener">http://www.karlgroves.com/2013/05/14/links-are-not-buttons-neither-are-divs-and-spans/</a></cite>
+  </div>
+</section>

@@ -20,6 +20,7 @@ import { AltTextComponent } from './components/alt-text/alt-text.component';
 import { FormLabelsComponent } from './components/form-labels/form-labels.component';
 import { FocusComponent } from './components/focus/focus.component';
 import { HtmlHeaderTagsComponent } from './components/html-header-tags/html-header-tags.component';
+import { LinksAndButtonsComponent } from './components/links-and-buttons/links-and-buttons.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { HtmlHeaderTagsComponent } from './components/html-header-tags/html-head
     FormLabelsComponent,
     FocusComponent,
     HtmlHeaderTagsComponent,
+    LinksAndButtonsComponent,
   ],
   imports: [
     BrowserModule,
