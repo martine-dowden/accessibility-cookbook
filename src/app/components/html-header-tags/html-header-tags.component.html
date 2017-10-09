@@ -1,0 +1,75 @@
+<h2>HTML Header Tags</h2>
+<section>
+  <h3>Overview &amp; Demo</h3>
+  <div class="spec">
+    <blockquote>
+      <p><strong>Guideline 1.3 Adaptable:</strong> Create content that can be presented in different ways (for example simpler layout) without losing information or structure.</p>
+      <div>
+        <p><strong>1.3.1 Info and Relationships:</strong> Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text. (Level A)</p>
+      </div>
+    </blockquote>
+    <cite><a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/#content-structure-separation-programmatic" target="_blank" rel="noopener">WCAG 2.0: Programmatic Content Structure Separation</a></cite>
+  </div>
+  <p>Heading are important because they communicate the structure of the content. Furthermore, browsers, plug-ins, and assistive technologies use them for in-page navigation.</p>
+  <h4>Demo</h4>
+  <div class="actions">
+    <button type="button" mat-raised-button color="accent" (click)="toggleHierarchy()">
+      <span *ngIf="hierarchy">Remove Hierarchy</span>
+      <span *ngIf="!hierarchy">Add Hierarchy</span>
+    </button>
+  </div>
+  <div class="demo-container" #container (window:resize)="onResize($event)">
+    <div class="demo hierarchy" [ngClass]="{'showTop': hierarchy, 'hideTop': !hierarchy}" [attr.aria-hidden]="hierarchy">
+      <div #withHierarchy>
+        <h1>Jurasic Era Dinosaurs</h1>
+        <h2>Carnivorous</h2>
+        <h3><ruby>Cryolophosaurus <rt>CRY-oh-LOFF-oh-SORE-us</rt></ruby>Ellioti</h3>
+        <h3><ruby>Megalosaurus <rt>MEG-ah-lo-SORE-us</rt></ruby> Bucklandii</h3>
+        <h2>Herbivorous</h2>
+        <h3><ruby>Kotasaurus <rt>KOH-ta-SORE-us</rt></ruby> Yamanpalliensis</h3>
+        <h3><ruby>Spinophorosaurus <rt>SPY-no-FOR-oh-SORE-us</rt></ruby> Nigerensis</h3>
+        <h3><ruby>Jobaria <rt>jo-BAR-ee-ahh</rt></ruby>Tiguidensis</h3>
+      </div>
+    </div>
+    <div [ngClass]="{'show': !hierarchy, 'hide': hierarchy}" class="demo" [attr.aria-hidden]="!hierarchy">
+      <div #withoutHierarchy>
+        <div>Jurasic Era Dinosaurs</div>
+        <div>Carnivorous</div>
+        <div><ruby>Cryolophosaurus <rt>CRY-oh-LOFF-oh-SORE-us</rt></ruby>Ellioti</div>
+        <div><ruby>Megalosaurus <rt>MEG-ah-lo-SORE-us</rt></ruby> Bucklandii</div>
+        <div>Herbivorous</div>
+        <div><ruby>Kotasaurus <rt>KOH-ta-SORE-us</rt></ruby> Yamanpalliensis</div>
+        <div><ruby>Spinophorosaurus <rt>SPY-no-FOR-oh-SORE-us</rt></ruby> Nigerensis</div>
+        <div><ruby>Jobaria <rt>jo-BAR-ee-ahh</rt></ruby>Tiguidensis</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <h2>The HTML</h2>
+  <div class="spec-technique">
+    <p><q>G141: Organizing a page using headings</q></p>
+    <cite><a href="https://www.w3.org/TR/WCAG20-TECHS/G141.html" target="_blank" rel="noopener"> Techniques for WCAG 2.0: G141</a></cite>
+  </div>
+  <p>Using the example about dinosaurs above, below is what the markup would be.</p>
+  <pre><code #code>&#x3C;h1&#x3E;Jurasic Era Dinosaurs&#x3C;/h1&#x3E;
+  &#x3C;h2&#x3E;Carnivorous&#x3C;/h2&#x3E;
+    &#x3C;h3&#x3E;&#x3C;ruby&#x3E;Cryolophosaurus &#x3C;rt&#x3E;CRY-oh-LOFF-oh-SORE-us&#x3C;/rt&#x3E;&#x3C;/ruby&#x3E;Ellioti&#x3C;/h3&#x3E;
+    &#x3C;h3&#x3E;&#x3C;ruby&#x3E;Megalosaurus &#x3C;rt&#x3E;MEG-ah-lo-SORE-us&#x3C;/rt&#x3E;&#x3C;/ruby&#x3E; Bucklandii&#x3C;/h3&#x3E;
+  &#x3C;h2&#x3E;Herbivorous&#x3C;/h2&#x3E;
+    &#x3C;h3&#x3E;&#x3C;ruby&#x3E;Kotasaurus &#x3C;rt&#x3E;KOH-ta-SORE-us&#x3C;/rt&#x3E;&#x3C;/ruby&#x3E; Yamanpalliensis&#x3C;/h3&#x3E;
+    &#x3C;h3&#x3E;&#x3C;ruby&#x3E;Spinophorosaurus &#x3C;rt&#x3E;SPY-no-FOR-oh-SORE-us&#x3C;/rt&#x3E;&#x3C;/ruby&#x3E; Nigerensis&#x3C;/h3&#x3E;
+    &#x3C;h3&#x3E;&#x3C;ruby&#x3E;Jobaria &#x3C;rt&#x3E;jo-BAR-ee-ahh&#x3C;/rt&#x3E;&#x3C;/ruby&#x3E;Tiguidensis&#x3C;/h3&#x3E;</code></pre>
+  
+</section>
+<section>
+  <div class="works-cite">
+    <h3>Resources</h3>
+    <cite>1.3.1 Info and Relationships (n.d.). Retrieved October 08, 2017, from <a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/#content-structure-separation-programmatic" target="_blank" rel="noopener">https://www.w3.org/TR/2008/REC-WCAG20-20081211/#content-structure-separation-programmatic</a></cite>
+    <cite>2.4.10 Section Headings (n.d.). Retrieved October 08, 2017, from <a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-headings" target="_blank" rel="noopener">https://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms-headings</a></cite>
+    <cite>G141: Organizing a page using headings. (n.d.). Retrieved October 08, 2017, from <a href="https://www.w3.org/TR/WCAG20-TECHS/G141.html" target="_blank" rel="noopener">https://www.w3.org/TR/WCAG20-TECHS/G141.html</a></cite>
+    <cite>H42: Using h1-h6 to identify headings. (n.d.). Retrieved October 08, 2017, from <a href="https://www.w3.org/TR/WCAG20-TECHS/H42.html" target="_blank" rel="noopener">https://www.w3.org/TR/WCAG20-TECHS/H42.html</a></cite>
+    <cite>Headings. (n.d.). Retrieved October 08, 2017, from <a href="https://www.w3.org/WAI/tutorials/page-structure/headings/" target="_blank" rel="noopener">https://www.w3.org/WAI/tutorials/page-structure/headings/</a></cite>
+    <cite>Pim, K., Horner, J. R., Pastori, F., &amp; Pim, K. (2016). Dinosaurs the grand tour: everything worth knowing about dinosaurs from Aardonyx to Zuniceratops. New York, NY: The Experiment, LLC.</cite>
+  </div>
+</section>

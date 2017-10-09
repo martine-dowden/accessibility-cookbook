@@ -19,6 +19,7 @@ import { ColorContrastComponent } from './components/color-contrast/color-contra
 import { AltTextComponent } from './components/alt-text/alt-text.component';
 import { FormLabelsComponent } from './components/form-labels/form-labels.component';
 import { FocusComponent } from './components/focus/focus.component';
+import { HtmlHeaderTagsComponent } from './components/html-header-tags/html-header-tags.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FocusComponent } from './components/focus/focus.component';
     AltTextComponent,
     FormLabelsComponent,
     FocusComponent,
+    HtmlHeaderTagsComponent,
   ],
   imports: [
     BrowserModule,

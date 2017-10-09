@@ -1,0 +1,113 @@
+@import '../../../assets/scss/mixins';
+
+.demo-container {
+  position: relative;
+  background: lighten($secondary-light, 30%);
+  margin: 0 -1rem;
+  .demo {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.demo, .example {
+  padding: 1rem;
+  background: lighten($secondary-light, 30%);
+  h1 {
+    color: darken($primary-light, 5%);
+    font-size: 2rem;
+    padding: 0 0 1.5rem 0;
+    margin: 0;
+    font-weight: bold;
+  }
+  h2 {
+    color: darken($secondary-light, 10%);
+    font-size: 1.5rem;
+    padding: 1.25rem 0 1.25rem 1rem;
+    margin: 0;
+    font-weight: bold;
+  }
+  h3 { 
+    font-size: 1rem;
+    padding: 1rem 0 1rem 2rem;
+    margin: 0;
+    font-weight: bold;
+  }
+  div { margin-bottom: 1rem; }
+}
+
+.example {
+  margin: 0;
+  padding: 0;
+  background: none;
+  h1 { color: inherit; }
+  h2 { color: inherit; margin: 1.25rem 0 }
+  h3 { color: inherit; margin: 1rem 0 }
+}
+
+.spec-technique {
+  margin-bottom: 2rem;
+}
+
+@keyframes open {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  to {
+    transform-origin: top;
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes openBottom {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+  to {
+    transform-origin: bottom;
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes close {
+  from {
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  to {
+    transform-origin: top;
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}
+
+@keyframes closeTop {
+  from {
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  to {
+    transform-origin: bottom;
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}
+
+.show { animation: open 500ms ease-in-out; z-index: 2; }
+.hide { animation: close 500ms ease-in-out; }
+
+  .showTop { animation: openBottom 500ms ease-in-out; z-index: 2; }
+  .hideTop { animation: closeTop 500ms ease-in-out;  }
+

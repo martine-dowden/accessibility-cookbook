@@ -100,6 +100,9 @@ fieldset {
   h3 { margin: 0; color: $secondary; }
   blockquote { margin: 0; }
   cite { text-align: right; }
+  div {
+    margin-left: 1.5rem;
+  }
 }
 
 .spec-technique {
