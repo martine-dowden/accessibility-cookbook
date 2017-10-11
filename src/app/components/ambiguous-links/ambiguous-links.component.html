@@ -1,0 +1,89 @@
+<h2>Ambiguous Links <small>...and buttons</small></h2>
+<section>
+  <h3>Overview &amp; Demo</h3>
+  <div class="spec">
+    <blockquote><p><strong>2.4.4 Link Purpose (In Context):</strong> The purpose of each link can be determined from the link text alone or from the link text together with its programmatically determined link context, except where the purpose of the link would be ambiguous to users in general. (Level A)</p></blockquote>
+    <cite><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-refs.html" target="_blank" rel="noopener">Understanding WCAG 2.0: SC 2.4.4</a></cite>
+  </div>
+
+  <p>Clear link text allow users to determine where the link with be taking them, and make a appropriate decisions accordingly.</p>
+
+  <div class="actions">
+    <button type="button" mat-raised-button color="accent" (click)="makeAccessible($event)">
+      <span *ngIf="accessible">Break Link Accessibility</span>
+      <span *ngIf="!accessible">Make Link Accessible</span>
+    </button>
+  </div>
+  <div class="demo">
+    <p>Click the link below</p>
+    <a *ngIf="!accessible" [routerLink]="['.']" fragment="resources" (click)="scrollTo('resources')"><i class="material-icons">&#xE02F;</i></a>
+    <a *ngIf="accessible" [routerLink]="['.']" fragment="resources" (click)="scrollTo('resources')"><i class="material-icons" aria-hidden="true">&#xE02F;</i> Jump to resources section</a>
+  </div>
+</section>
+
+<section>
+  <h3>The Code</h3>
+  <div class="spec-technique">
+    <p><q>C7: Using CSS to hide a portion of the link text</q></p>
+    <cite><a href="https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/C7" target="_blank" rel="noopener">Techniques for WCAG 2.0: C7</a></cite>
+    <p><q>H33: Supplementing link text with the title attribute</q></p>
+    <cite><a href="https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H33" target="_blank" rel="noopener">Techniques for WCAG 2.0: H33</a></cite>
+  </div>
+
+  <h4>Example</h4>
+
+<pre><code #code>&#x3C;a href=&#x22;#resources&#x22; title="Resources"&#x3E;
+  &#x3C;i class=&#x22;material-icons&#x22; aria-label=&#x22;hidden&#x22;&#x3E;&#x26;#xE02F;&#x3C;/i&#x3E;
+  &#x3C;span&#x3E;Resources&#x3C;/span&#x3E;
+&#x3C;/a&#x3E;</code></pre>
+
+  <h5>Code</h5>
+<pre><code #code2>a span &#123;
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  top: -10px; 
+&#125;</code></pre>
+
+  <h4>Example</h4>
+  
+  <div class="example">
+    <a href="http://example.com/WORLD/africa/kenya.elephants.ap/index.html" target="_blank" rel="noopener" title="Read more about failed elephant evacuation">Evacuation Crumbles Under Jumbo load</a>
+  </div>
+
+  <h5>Code</h5>
+
+<pre><code #code3>&#x3C;a href=&#x22;http://example.com/WORLD/africa/kenya.elephants.ap/index.html&#x22;
+ title="Read more about failed elephant evacuation"&#x3E;
+  Evacuation Crumbles Under Jumbo load
+&#x3C;/a&#x3E;</code></pre>
+
+  <div class="spec-technique">
+    <p><q>ARIA8: Using aria-label for link purpose</q></p>
+    <cite><a href="https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/ARIA8" target="_blank" rel="noopener">Techniques for WCAG 2.0: ARIA8</a></cite>
+  </div>
+  <h4>Example</h4>
+  <div class="example onion">
+    <p>Equifax Impressed By Hackers’ Ability To Ruin People’s Finances More Efficiently Than Company Can</p>
+    <blockquote>ATLANTA—In the wake of a massive data breach that exposed the sensitive personal information of 143 million customers, executives from credit agency Equifax said Friday that they were impressed by the hackers’ ability to ruin people’s finances much more efficiently than their company can...</blockquote>
+    <a href="http://www.theonion.com/article/equifax-impressed-hackers-ability-ruin-peoples-fin-56882" target="_blank" rel="noopener" aria-label="Read more about the Equifax breach">Read More</a>
+  </div>
+  <h5>Code</h5>
+<pre><code #code4 >&#x3C;p&#x3E;Equifax Impressed By Hackers&#x2019; Ability To Ruin People&#x2019;s Finances More Efficiently Than Company Can&#x3C;/p&#x3E;
+&#x3C;blockquote&#x3E;ATLANTA&#x2014;In the wake of a massive data breach that exposed the sensitive personal information of 143 million customers, executives from credit agency Equifax said Friday that they were impressed by the hackers&#x2019; ability to ruin people&#x2019;s finances much more efficiently than their company can...&#x3C;/blockquote&#x3E;
+
+&#x3C;a href=&#x22;http://www.theonion.com/article/equifax-impressed-hackers-ability-ruin-peoples-fin-56882&#x22;
+ aria-label=&#x22;Read more about the Equifax breach&#x22;
+  &#x3E;Read More
+&#x3C;/a&#x3E;</code></pre>
+</section>
+<section>
+  <h3 id="resources">Resources</h3>
+  <cite>ARIA8: Using aria-label for link purpose. (n.d.). Retrieved October 11, 2017, from <a href="https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/ARIA8" rel="noopener" target="_blank">https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/ARIA8</a></cite>
+  <cite>C7: Using CSS to hide a portion of the link text. (n.d.). Retrieved October 11, 2017, from <a href="https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/C7" rel="noopener" target="_blank">https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/C7</a></cite>
+  <cite>H33: Supplementing link text with the title attribute. (n.d.). Retrieved October 11, 2017, from <a href="https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/" rel="noopener" target="_blank">https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/</a></cite>
+  <cite>H33Link Purpose (Link Only):Understanding SC 2.4.9. (n.d.). Retrieved October 11, 2017, from <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-link.html" rel="noopener" target="_blank">https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-link.html</a></cite>
+  <cite>Page Titled:Understanding SC 2.4.2. (n.d.). Retrieved October 11, 2017, from <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html" rel="noopener" target="_blank">https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html</a></cite>
+</section>
+

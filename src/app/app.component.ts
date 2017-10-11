@@ -1,25 +1,50 @@
-import { Component, AfterContentChecked, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, AfterContentChecked, OnDestroy } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements AfterContentChecked {
+export class AppComponent implements  AfterContentChecked, OnDestroy {
 
-currentRoute;
+public currentRoute;
+private sub;
 
-  constructor(public route: Router) {
-    this.currentRoute = route.url;
-  }
+  constructor(public router: Router, public route: ActivatedRoute) {}
 
   ngAfterContentChecked() {
-    if (this.route.url !== this.currentRoute) {
+
+    //  Because angular still doesn't support linking to a hash in the page...
+
+    //  Does my new route have a hash?
+    const match = this.router.url.match(/(^.*)\#/);
+
+    //  if hash
+    if (this.router.url !== this.currentRoute && match) {
+      this.sub = this.route.fragment.subscribe(f => {
+        const element = document.querySelector('#' + f);
+        if (element) {
+            element.scrollIntoView();
+        }
+      });
+
+    // check to see if routes are identical
+    } else if (this.router.url !== this.currentRoute) {
+      //  routes are not the same, scroll to top of page
       document.getElementById('container').scrollTop = 0;
-      this.currentRoute = this.route.url;
+
+    } else {
+      // Routes are the same do nothing
+      return;
     }
-    
+
+    //  update current route for next go round
+    this.currentRoute = this.router.url;
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
   
 }

@@ -21,6 +21,7 @@ import { FormLabelsComponent } from './components/form-labels/form-labels.compon
 import { FocusComponent } from './components/focus/focus.component';
 import { HtmlHeaderTagsComponent } from './components/html-header-tags/html-header-tags.component';
 import { LinksAndButtonsComponent } from './components/links-and-buttons/links-and-buttons.component';
+import { AmbiguousLinksComponent } from './components/ambiguous-links/ambiguous-links.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { LinksAndButtonsComponent } from './components/links-and-buttons/links-a
     FocusComponent,
     HtmlHeaderTagsComponent,
     LinksAndButtonsComponent,
+    AmbiguousLinksComponent,
   ],
   imports: [
     BrowserModule,

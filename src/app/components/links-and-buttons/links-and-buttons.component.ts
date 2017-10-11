@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LinksAndButtonsComponent implements OnInit {
   
-  link = false;
+  link;
   button;
   neither;
   buttonQuestion;
