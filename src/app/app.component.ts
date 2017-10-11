@@ -34,9 +34,6 @@ private sub;
       //  routes are not the same, scroll to top of page
       document.getElementById('container').scrollTop = 0;
 
-    } else {
-      // Routes are the same do nothing
-      return;
     }
 
     //  update current route for next go round

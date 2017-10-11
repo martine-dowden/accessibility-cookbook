@@ -21,7 +21,7 @@ export class AmbiguousLinksComponent implements AfterViewInit {
   constructor(private router: Router) {}
   
   scrollTo(f) {
-    if (this.router.url === '/ambiguous_links#resources') {
+    if (this.router.url.match(/(^.*)\#/)) {
       const element = document.querySelector('#' + f);
       if (element) {
           element.scrollIntoView();
