@@ -2,7 +2,6 @@
   <i class="material-icons" aria-label="toggle menu" matTooltip="toggle menu">menu</i>
 </button>
 <nav *ngIf="expanded" id="nav" [attr.aria-hidden]="!expanded" [@flyInOut]>
-  <a class="sr-only" tabindex="0" (click)="changeFocus('main')" (keyup.enter)="changeFocus('main')">Skip Nav</a>
   <a [routerLink]="'color_contrast'" routerLinkActive="active">Color Contrast</a>
   <a [routerLink]="'alt_text'" routerLinkActive="active">Alt Text</a>
   <a [routerLink]="'form_labels'" routerLinkActive="active">Form Labels</a>

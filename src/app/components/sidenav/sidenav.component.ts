@@ -65,15 +65,4 @@ export class SidenavComponent implements OnInit {
     else { this.expanded = false; }
   }
 
-  changeFocus(id) {
-    //  check for the hash
-      console.log(id);
-      const element = document.getElementById(id);
-      
-      if (element) {
-          element.focus();
-      }
-    
-  }
-
 }

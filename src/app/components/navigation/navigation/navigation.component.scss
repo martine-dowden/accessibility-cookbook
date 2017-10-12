@@ -1,0 +1,48 @@
+@import '../../../../assets/scss/mixins';
+
+.demo {
+  @include card;
+  position: relative;
+  .header { background:#bbdefb; }
+  .nav { background:#dcedc8; }
+  .demo-section { background:#fff9c4; }
+  .article { background:#f3e5f5; }
+  .aside {
+    background:#e0f7fa;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .footer { background:#ffebee; }
+  div {
+    padding: 1rem;
+  }
+  h5 { 
+    text-align: center;
+    font-size: 1.25rem;
+  }
+  .main {
+    display: flex;
+    padding: 0;
+    div { flex-grow: 1; }
+    & > div:not(.aside) {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  cite {
+    margin: .5rem 0 0;
+    text-align: right;
+  }
+}
+
+.element {
+  position: relative;
+  button {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+  }
+}

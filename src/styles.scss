@@ -153,6 +153,20 @@ table {
   td { font-size: .875rem }
 }
 
+.mat-dialog-title {
+  padding: 24px 32px;
+  margin: -24px !important;
+  background: $primary;
+  color: $text-light;
+}
+.mat-dialog-content {
+  margin: 24px -24px !important;
+  padding: 0;
+}
+.mat-dialog-actions {
+  justify-content: flex-end;
+}
+
 @media ( min-width: $small ) {
   main {
     left: 12rem;

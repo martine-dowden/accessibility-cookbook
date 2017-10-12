@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 
-import { MatTooltipModule, MatButtonModule, MatInputModule, MatSnackBarModule } from '@angular/material';
+import { MatTooltipModule, MatButtonModule, MatInputModule, MatSnackBarModule, MatDialogModule, } from '@angular/material';
 import 'hammerjs';
 import { HighlightJsModule, HighlightJsService } from 'angular2-highlight-js';
 
@@ -23,7 +23,7 @@ import { HtmlHeaderTagsComponent } from './components/html-header-tags/html-head
 import { LinksAndButtonsComponent } from './components/links-and-buttons/links-and-buttons.component';
 import { AmbiguousLinksComponent } from './components/ambiguous-links/ambiguous-links.component';
 import { LanguageAttributeComponent } from './components/language-attribute/language-attribute/language-attribute.component';
-import { NavigationComponent } from './components/navigation/navigation/navigation.component';
+import { NavigationComponent, SectionInfoDialog } from './components/navigation/navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +40,7 @@ import { NavigationComponent } from './components/navigation/navigation/navigati
     AmbiguousLinksComponent,
     LanguageAttributeComponent,
     NavigationComponent,
+    SectionInfoDialog
   ],
   imports: [
     BrowserModule,
@@ -51,9 +52,11 @@ import { NavigationComponent } from './components/navigation/navigation/navigati
     MatTooltipModule,
     MatButtonModule,
     MatInputModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [HighlightJsService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [SectionInfoDialog]
 })
 export class AppModule { }

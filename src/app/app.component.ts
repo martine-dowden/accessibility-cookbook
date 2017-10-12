@@ -40,6 +40,14 @@ private sub;
     this.currentRoute = this.router.url;
   }
 
+  changeFocus(id) {
+    console.log(id);
+    const element = document.getElementById(id);
+    if (element) {
+        element.focus();
+    }
+  }
+
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
