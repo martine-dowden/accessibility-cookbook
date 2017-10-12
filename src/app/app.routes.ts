@@ -7,6 +7,7 @@ import { FocusComponent } from "./components/focus/focus.component";
 import { HtmlHeaderTagsComponent } from "./components/html-header-tags/html-header-tags.component";
 import { LinksAndButtonsComponent } from "./components/links-and-buttons/links-and-buttons.component";
 import { AmbiguousLinksComponent } from "./components/ambiguous-links/ambiguous-links.component";
+import { LanguageAttributeComponent } from "./components/language-attribute/language-attribute/language-attribute.component";
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
   { path: 'html_header_tags', component: HtmlHeaderTagsComponent },
   { path: 'links_and_buttons', component: LinksAndButtonsComponent },
   { path: 'ambiguous_links', component: AmbiguousLinksComponent},
+  { path: 'language_attribute', component: LanguageAttributeComponent},
   { path: '',
     redirectTo: '/home',
     pathMatch: 'full'

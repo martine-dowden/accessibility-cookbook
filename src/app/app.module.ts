@@ -22,6 +22,7 @@ import { FocusComponent } from './components/focus/focus.component';
 import { HtmlHeaderTagsComponent } from './components/html-header-tags/html-header-tags.component';
 import { LinksAndButtonsComponent } from './components/links-and-buttons/links-and-buttons.component';
 import { AmbiguousLinksComponent } from './components/ambiguous-links/ambiguous-links.component';
+import { LanguageAttributeComponent } from './components/language-attribute/language-attribute/language-attribute.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { AmbiguousLinksComponent } from './components/ambiguous-links/ambiguous-
     HtmlHeaderTagsComponent,
     LinksAndButtonsComponent,
     AmbiguousLinksComponent,
+    LanguageAttributeComponent,
   ],
   imports: [
     BrowserModule,
