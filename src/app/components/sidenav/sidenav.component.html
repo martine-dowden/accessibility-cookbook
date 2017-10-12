@@ -1,8 +1,8 @@
 <button type="button" type="button" (window:resize)="onResize($event)" (click)="toggleNav()" [attr.aria-expanded]="expanded" [attr.aria-controls]="'nav'">
   <i class="material-icons" aria-label="toggle menu" matTooltip="toggle menu">menu</i>
 </button>
-<!-- <a [routerLink]="['.']" fragment="skipped">Skip Nav</a> -->
 <nav *ngIf="expanded" id="nav" [attr.aria-hidden]="!expanded" [@flyInOut]>
+  <a class="sr-only" tabindex="0" (click)="changeFocus('main')" (keyup.enter)="changeFocus('main')">Skip Nav</a>
   <a [routerLink]="'color_contrast'" routerLinkActive="active">Color Contrast</a>
   <a [routerLink]="'alt_text'" routerLinkActive="active">Alt Text</a>
   <a [routerLink]="'form_labels'" routerLinkActive="active">Form Labels</a>
@@ -14,4 +14,3 @@
   <a [routerLink]="'navigation'" routerLinkActive="active">Navigation</a>
   <a [routerLink]="'animations'" routerLinkActive="active">Animations</a>
 </nav>
-<!-- <a id="skipped"></a> -->

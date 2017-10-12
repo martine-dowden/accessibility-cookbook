@@ -32,7 +32,7 @@ private sub;
     // check to see if routes are identical
     } else if (this.router.url !== this.currentRoute) {
       //  routes are not the same, scroll to top of page
-      document.getElementById('container').scrollTop = 0;
+      document.getElementById('main').scrollTop = 0;
 
     }
 

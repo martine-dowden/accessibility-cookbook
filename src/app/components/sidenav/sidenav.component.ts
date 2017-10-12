@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, style, animate, transition, keyframes, state } from '@angular/animations';
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -47,6 +48,8 @@ export class SidenavComponent implements OnInit {
   expanded = false;
   category;
 
+  constructor(private router: Router) {}
+
   ngOnInit() {
     console.log(window.innerWidth);
     this.manageNav(window.innerWidth);
@@ -62,5 +65,15 @@ export class SidenavComponent implements OnInit {
     else { this.expanded = false; }
   }
 
+  changeFocus(id) {
+    //  check for the hash
+      console.log(id);
+      const element = document.getElementById(id);
+      
+      if (element) {
+          element.focus();
+      }
+    
+  }
 
 }

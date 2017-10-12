@@ -12,6 +12,9 @@ a, a:link, a:visited {
   &.active {
     background: $grey300;
     color: $primary;
+    &:hover, &:focus {
+      background: lighten($secondary-light, 25%);
+    }
   }
 }
 

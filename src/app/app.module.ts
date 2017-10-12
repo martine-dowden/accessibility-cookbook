@@ -23,6 +23,7 @@ import { HtmlHeaderTagsComponent } from './components/html-header-tags/html-head
 import { LinksAndButtonsComponent } from './components/links-and-buttons/links-and-buttons.component';
 import { AmbiguousLinksComponent } from './components/ambiguous-links/ambiguous-links.component';
 import { LanguageAttributeComponent } from './components/language-attribute/language-attribute/language-attribute.component';
+import { NavigationComponent } from './components/navigation/navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { LanguageAttributeComponent } from './components/language-attribute/lang
     LinksAndButtonsComponent,
     AmbiguousLinksComponent,
     LanguageAttributeComponent,
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,
