@@ -1,6 +1,7 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild, ElementRef } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
 
+declare var hljs: any;
 
 @Component({
   selector: 'app-navigation',
@@ -8,6 +9,10 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
+
+  @ViewChild('code') codeElement: ElementRef;
+  @ViewChild('code2') codeElement2: ElementRef;
+  @ViewChild('code3') codeElement3: ElementRef;
 
   sections = {
     header: '<p>The HTML <code>&lt;header&gt;</code> element represents introductory content, typically a group of introductory or navigational aids. It may contain some heading elements but also other elements like a logo, a search form, an author name, and so on.</p>',
@@ -22,6 +27,12 @@ export class NavigationComponent implements OnInit {
   constructor(public dialog: MatDialog) {}
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit() {
+    hljs.highlightBlock(this.codeElement.nativeElement);
+    hljs.highlightBlock(this.codeElement2.nativeElement);
+    hljs.highlightBlock(this.codeElement3.nativeElement);
   }
 
   expand(section) {

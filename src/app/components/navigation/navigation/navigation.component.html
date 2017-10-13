@@ -41,3 +41,75 @@
     <cite><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" rel="noopener" target="_blank">MDN web docs: HTML element reference</a></cite>
   </div>
 </section>
+
+<section>
+  <h3>The Code</h3>
+  <div class="spec-technique">
+    <p><q>ARIA11: Using ARIA landmarks to identify regions of a page</q></p>
+    <cite><a href="https://www.w3.org/TR/WCAG20-TECHS/ARIA11.html" target="_blank" rel="noopener">Techniques for WCAG 2.0: ARIA11</a></cite>
+  </div>
+  <h4>HTML &amp; ARIA</h4>
+  <div class="element-role">
+    <div>
+<pre><code #code>&lt;body&gt;
+  &lt;header&gt; ... &lt;/header&gt;
+  &lt;nav&gt; ... &lt;/nav&gt;
+  &lt;main&gt;
+    &lt;section&gt; ... &lt;/section&gt;
+    &lt;article&gt; ... &lt;/article&gt;
+    &lt;aside&gt; ... &lt;/aside&gt;
+  &lt;/main&gt;
+  &lt;footer&gt; ... &lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+    </div>
+    <div>
+<pre><code #code2>&lt;body&gt;
+  &lt;div role=&quot;banner&quot;&gt; ... &lt;/div&gt;
+  &lt;div role=&quot;navigation&quot;&gt; ... &lt;/div&gt;
+  &lt;div role=&quot;main&quot;&gt;
+    &lt;div role=&quot;region&quot;&gt; ... &lt;/div&gt;
+    &lt;div role=&quot;article&quot;&gt; ... &lt;/div&gt;
+    &lt;div role=&quot;complementary&quot;&gt; ... &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div role=&quot;contentinfo&quot;&gt; ... &lt;/div&gt;
+&lt;/body&gt;</code></pre>
+    </div>
+  </div>
+  <p>Reference: <a href="https://www.w3.org/TR/html-aria/" target="_blank" rel="noopener">ARIA in HTML</a></p>
+  <div class="spec-technique">
+    <p><q>G1: Adding a link at the top of each page that goes directly to the main content area</q></p>
+    <cite><a href="https://www.w3.org/TR/WCAG20-TECHS/G1.html" target="blank" rel="noopener">Techniques for WCAG 2.0: G1</a></cite>
+    <p><q>G123: Adding a link at the beginning of a block of repeated content to go to the end of the block</q></p>
+    <cite><a href="https://www.w3.org/TR/WCAG20-TECHS/G123.html" target="blank" rel="noopener">Techniques for WCAG 2.0: G123</a></cite>
+  </div>
+
+  <h4>HTML</h4>
+<pre><code #code3>&lt;p&gt;&lt;a href=&quot;#content&gt;Lions&lt;/a&gt;&lt;/p&gt;
+&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;lions.html&quot;&gt;Lions&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;tigers.html&quot;&gt;Tigers&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;bears.html&quot;&gt;Bears&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;h2 id=&quot;content&quot;&gt;Lions&lt;/h2&gt;
+.. All about Lions ... </code></pre>
+</section>
+
+<section>
+  <h3>Resources</h3>
+  <cite>Bypass Blocks:Understanding SC 2.4.1. (n.d.). Retrieved October 13, 2017, from <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html" target="_blank" rel="noopener">https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html</a></cite>
+  <cite>(n.d.). Retrieved October 13, 2017, from <a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms" target="_blank" rel="noopener">https://www.w3.org/TR/2008/REC-WCAG20-20081211/#navigation-mechanisms</a></cite>
+  <cite>(n.d.). Retrieved October 13, 2017, from <a href="https://www.w3.org/WAI/WCAG20/quickref/?showtechniques=241#qr-navigation-mechanisms-skip" target="_blank" rel="noopener">https://www.w3.org/WAI/WCAG20/quickref/?showtechniques=241#qr-navigation-mechanisms-skip</a></cite>
+  <cite>ARIA in HTML. (n.d.). Retrieved October 13, 2017, from <a href="https://www.w3.org/TR/html-aria/" target="_blank" rel="noopener">https://www.w3.org/TR/html-aria/</a></cite>
+  <cite>ARIA11: Using ARIA landmarks to identify regions of a page. (n.d.). Retrieved October 13, 2017, from <a href="https://www.w3.org/TR/WCAG20-TECHS/ARIA11.html" target="_blank" rel="noopener">https://www.w3.org/TR/WCAG20-TECHS/ARIA11.html</a></cite>
+  <cite>C6: Positioning content based on structural markup. (n.d.). Retrieved October 13, 2017, from <a href="https://www.w3.org/TR/WCAG20-TECHS/C6.html" target="_blank" rel="noopener">https://www.w3.org/TR/WCAG20-TECHS/C6.html</a></cite>
+  <cite>CSS in ActionInvisible Content Just for Screen Reader Users. (n.d.). Retrieved October 13, 2017, from <a href="https://webaim.org/techniques/css/invisiblecontent/" target="_blank" rel="noopener">https://webaim.org/techniques/css/invisiblecontent/</a></cite>
+  <cite>G115: Using semantic elements to mark up structure. (n.d.). Retrieved October 13, 2017, from <a href="https://www.w3.org/TR/WCAG20-TECHS/G115.html" target="_blank" rel="noopener">https://www.w3.org/TR/WCAG20-TECHS/G115.html</a></cite>
+  <cite>G115: Using semantic elements to mark up structure. (n.d.). Retrieved October 13, 2017, from <a href="https://www.w3.org/TR/WCAG20-TECHS/G115.html" target="_blank" rel="noopener">https://www.w3.org/TR/WCAG20-TECHS/G115.html</a></cite>
+  <cite>G123: Adding a link at the beginning of a block of repeated content to go to the end of the block. (n.d.). Retrieved October 13, 2017, from <a href="https://www.w3.org/TR/WCAG20-TECHS/G123.html" target="_blank" rel="noopener">https://www.w3.org/TR/WCAG20-TECHS/G123.html</a></cite>
+  <cite>G1: Adding a link at the top of each page that goes directly to the main content area. (n.d.). Retrieved October 13, 2017, from <a href="https://www.w3.org/TR/WCAG20-TECHS/G1.html" target="_blank" rel="noopener">https://www.w3.org/TR/WCAG20-TECHS/G1.html</a></cite>
+  <cite>HTML element reference. (n.d.). Retrieved October 13, 2017, from <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/HTML/Element</a></cite>
+  <cite>Multiple Ways:Understanding SC 2.4.5. (n.d.). Retrieved October 13, 2017, from <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-mult-loc.html" target="_blank" rel="noopener">https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-mult-loc.html</a></cite>
+  <cite>Navigable:Understanding Guideline 2.4. (n.d.). Retrieved October 13, 2017, from <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms.html" target="_blank" rel="noopener">https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms.html</a></cite>
+</section>

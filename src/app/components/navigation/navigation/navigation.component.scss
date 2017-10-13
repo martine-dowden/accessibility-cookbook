@@ -46,3 +46,13 @@
     right: 1rem;
   }
 }
+
+@media ( min-width: $small ) {
+  .element-role {
+    display: flex;
+    justify-content: space-between;
+    & > div {
+      flex-grow: 1;
+    }
+  }
+}
