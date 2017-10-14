@@ -2,14 +2,15 @@
   <i class="material-icons" aria-label="toggle menu" matTooltip="toggle menu">menu</i>
 </button>
 <nav *ngIf="expanded" id="nav" [attr.aria-hidden]="!expanded" [@flyInOut]>
-  <a [routerLink]="'color_contrast'" routerLinkActive="active">Color Contrast</a>
-  <a [routerLink]="'alt_text'" routerLinkActive="active">Alt Text</a>
-  <a [routerLink]="'form_labels'" routerLinkActive="active">Form Labels</a>
-  <a [routerLink]="'focus'" routerLinkActive="active">Focus</a>
+  <a [routerLink]="'language_attribute'" routerLinkActive="active">Language Attribute</a>
+  <a [routerLink]="'navigation'" routerLinkActive="active">Navigation</a>
   <a [routerLink]="'html_header_tags'" routerLinkActive="active">HTML Header Tags</a>
   <a [routerLink]="'links_and_buttons'" routerLinkActive="active">Links and Buttons</a>
   <a [routerLink]="'ambiguous_links'" routerLinkActive="active">Ambiguous Links</a>
-  <a [routerLink]="'language_attribute'" routerLinkActive="active">Language Attribute</a>
-  <a [routerLink]="'navigation'" routerLinkActive="active">Navigation</a>
+  <a [routerLink]="'focus'" routerLinkActive="active">Focus</a>
+  <a [routerLink]="'color_contrast'" routerLinkActive="active">Color Contrast</a>
+  <a [routerLink]="'form_labels'" routerLinkActive="active">Form Labels</a>
+  <a [routerLink]="'alt_text'" routerLinkActive="active">Alt Text</a>
   <a [routerLink]="'animations'" routerLinkActive="active">Animations</a>
+  <a [routerLink]="'tools'" routerLinkActive="active">Tools</a>
 </nav>

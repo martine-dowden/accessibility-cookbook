@@ -25,6 +25,7 @@ import { AmbiguousLinksComponent } from './components/ambiguous-links/ambiguous-
 import { LanguageAttributeComponent } from './components/language-attribute/language-attribute/language-attribute.component';
 import { NavigationComponent, SectionInfoDialog } from './components/navigation/navigation/navigation.component';
 import { AnimationsComponent } from './components/animations/animations.component';
+import { ToolsComponent } from './components/tools/tools.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { AnimationsComponent } from './components/animations/animations.componen
     LanguageAttributeComponent,
     NavigationComponent,
     SectionInfoDialog,
-    AnimationsComponent
+    AnimationsComponent,
+    ToolsComponent
   ],
   imports: [
     BrowserModule,
