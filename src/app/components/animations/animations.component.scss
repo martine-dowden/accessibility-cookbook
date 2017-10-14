@@ -1,0 +1,38 @@
+@import '../../../assets/scss/mixins';
+
+.carouselle {
+  position: relative;
+}
+.demo {
+  background: black;
+  margin: 0 -1rem;
+  .actions {
+    text-align: center;
+    background: $grey900;
+    button { color: white; }
+  }
+}
+
+.dots {
+  position: absolute;
+  right: 0; bottom: 0; left: 0;
+  text-align: center;
+  button { color: white;};
+  button[disabled] { color: $grey500 }
+}
+
+cite.nasa {
+  display: block;
+  text-align: right;
+  margin-top: .75rem;
+}
+
+@media ( min-width: $small ) {
+  .demo {
+    .carouselle, .actions {
+      width: 100%;
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+  }
+}

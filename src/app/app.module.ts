@@ -24,6 +24,7 @@ import { LinksAndButtonsComponent } from './components/links-and-buttons/links-a
 import { AmbiguousLinksComponent } from './components/ambiguous-links/ambiguous-links.component';
 import { LanguageAttributeComponent } from './components/language-attribute/language-attribute/language-attribute.component';
 import { NavigationComponent, SectionInfoDialog } from './components/navigation/navigation/navigation.component';
+import { AnimationsComponent } from './components/animations/animations.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { NavigationComponent, SectionInfoDialog } from './components/navigation/
     AmbiguousLinksComponent,
     LanguageAttributeComponent,
     NavigationComponent,
-    SectionInfoDialog
+    SectionInfoDialog,
+    AnimationsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,77 @@
+<h2>Animations</h2>
+<section>
+  <h3>Overview &amp; Demo</h3>
+  <div class="spec">
+    <blockquote>
+        <p>Guideline 2.2 Enough Time: Provide users enough time to read and use content.</p>
+        <p>2.2.1 Timing Adjustable: For each time limit that is set by the content, at least one of the following is true: (Level A)</p>
+        <ul>
+          <li>Turn off: The user is allowed to turn off the time limit before encountering it; or</li>
+          <li>Adjust: The user is allowed to adjust the time limit before encountering it over a wide range that is at least ten times the length of the default setting; or</li>
+          <li>Extend: The user is warned before time expires and given at least 20 seconds to extend the time limit with a simple action (for example, "press the space bar"), and the user is allowed to extend the time limit at least ten times; or</li>
+          <li>Real-time Exception: The time limit is a required part of a real-time event (for example, an auction), and no alternative to the time limit is possible; or</li>
+          <li>Essential Exception: The time limit is essential and extending it would invalidate the activity; or</li>
+          <li>20 Hour Exception: The time limit is longer than 20 hours.</li>
+        </ul>
+    </blockquote>
+    <cite><a href="https://www.w3.org/TR/WCAG20/#time-limits" target="_blank" rel="noopener"> WGAG 2.0: G2.2</a></cite>
+  </div>
+
+  <div class="actions">
+    <button type="button" mat-raised-button color="accent" (click)="makeAccessible()">
+      <span *ngIf="accessible">Remove Accessibility Features</span>
+      <span *ngIf="!accessible">Make Accessible</span>
+    </button>
+  </div>
+  <h4>Demo</h4>
+  <div class="demo">
+    <div class="carouselle" id="carouselle" aria-live="polite">
+      <ng-template ngFor let-sun let-i="index" [ngForOf]="images">
+        <img #image (window:resize)="getHeight(image)" (load)="getHeight(image)" [@imageAnimation]="orientation"  #image *ngIf="currentslide === i + 1" src="../../../../assets/img/{{ sun.fileName }}" alt="{{ sun.alt }}">
+      </ng-template>
+      <div class="dots">
+        <ng-template ngFor let-sun let-i="index" [ngForOf]="images">
+          <button type="button" [disabled]="currentslide === i + 1" mat-icon-button (click)="jumpTo(i+1)" matTooltip="jump to image number {{ i + 1 }}" ><i class="material-icons">&#xE061;</i></button>
+        </ng-template>
+      </div>
+    </div>
+    <div class="actions" *ngIf="accessible">
+      <button type="button" mat-icon-button (click)="previous()" matTooltip="Previous"><i class="material-icons">&#xE045;</i></button>
+      <button *ngIf="this.isAuto" type="button" mat-icon-button (click)="stopAuto()" matTooltip="Pause"><i class="material-icons">&#xE034;</i></button>
+      <button *ngIf="!this.isAuto" type="button" mat-icon-button (click)="makeAuto()" matTooltip="Play"><i class="material-icons">&#xE037;</i></button>
+      <button type="button" mat-icon-button (click)="next()" matTooltip="Next"><i class="material-icons">&#xE044;</i></button>
+    </div>
+  </div>
+  <cite class="nasa">Images from <a href="https://www.nasa.gov/multimedia/imagegallery/index.html" target="_blank" rel="noopener">Nasa Image Gallery</a></cite>
+</section>
+
+<section>
+  <h3>Implementation</h3>
+  <div class="spec-technique">
+    <p><q>G4: Allowing the content to be paused and restarted from where it was paused</q></p>
+    <cite><a href="https://www.w3.org/TR/WCAG20-TECHS/G4.html" target="_blank" rel="noopener"> Techniques for WCAG 2.0: G4</a></cite>
+
+  <blockquote>
+    <p>2.2.2 Pause, Stop, Hide: For moving, blinking, scrolling, or auto-updating information, all of the following are true: (Level A)</p>
+    <ul>
+      <li><strong>Moving, blinking, scrolling:</strong> For any moving, blinking or scrolling information that (1) starts automatically, (2) lasts more than five seconds, and (3) is presented in parallel with other content, there is a mechanism for the user to pause, stop, or hide it unless the movement, blinking, or scrolling is part of an activity where it is essential; and</li>
+      <li><strong>Auto-updating:</strong> For any auto-updating information that (1) starts automatically and (2) is presented in parallel with other content, there is a mechanism for the user to pause, stop, or hide it or to control the frequency of the update unless the auto-updating is part of an activity where it is essential.</li>
+    </ul>
+  </blockquote>
+  <cite><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/time-limits-pause.html" target="_blank" rel="noopener">Pause, Stop, Hide: Understanding SC 2.2.2</a></cite>
+  </div>
+</section>
+
+
+
+<section>
+  <h3>Resource</h3>
+  <cite>How to Meet WCAG 2.0 A customizable quick reference to Web Content Accessibility Guidelines 2.0 requirements (success criteria) and techniques. (n.d.). Retrieved October 14, 2017, from <a href="https://www.w3.org/WAI/WCAG20/quickref/20160105/#seizure-does-not-violate" target="_blank" rel="noopener">https://www.w3.org/WAI/WCAG20/quickref/20160105/#seizure-does-not-violate</a></cite>
+  <cite>G198: Providing a way for the user to turn the time limit off. (n.d.). Retrieved October 14, 2017, from <a href="https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/G198" target="_blank" rel="noopener">https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/G198</a></cite>
+  <cite>G19: Ensuring that no component of the content flashes more than three times in any 1-second period. (n.d.). Retrieved October 14, 2017, from <a href="https://www.w3.org/TR/WCAG20-TECHS/G19.html" target="_blank" rel="noopener">https://www.w3.org/TR/WCAG20-TECHS/G19.html</a></cite>
+  <cite>G4: Allowing the content to be paused and restarted from where it was paused. (n.d.). Retrieved October 14, 2017, from <a href="https://www.w3.org/TR/WCAG20-TECHS/G4.html" target="_blank" rel="noopener">https://www.w3.org/TR/WCAG20-TECHS/G4.html</a></cite>
+  <cite>Pause, Stop, Hide:Understanding SC 2.2.2. (n.d.). Retrieved October 14, 2017, from <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/time-limits-pause.html" target="_blank" rel="noopener">https://www.w3.org/TR/UNDERSTANDING-WCAG20/time-limits-pause.html</a></cite>
+  <cite>Timing Adjustable:Understanding SC 2.2.1. (n.d.). Retrieved October 14, 2017, from <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/time-limits-required-behaviors.html" target="_blank" rel="noopener">https://www.w3.org/TR/UNDERSTANDING-WCAG20/time-limits-required-behaviors.html</a></cite>
+  <cite>Web Content Accessibility Guidelines (WCAG) 2.0. (n.d.). Retrieved October 14, 2017, from <a href="https://www.w3.org/TR/WCAG20/#time-limits" target="_blank" rel="noopener">https://www.w3.org/TR/WCAG20/#time-limits</a></cite>
+</section>
+  

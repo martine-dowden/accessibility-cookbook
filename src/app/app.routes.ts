@@ -9,6 +9,7 @@ import { LinksAndButtonsComponent } from "./components/links-and-buttons/links-a
 import { AmbiguousLinksComponent } from "./components/ambiguous-links/ambiguous-links.component";
 import { LanguageAttributeComponent } from "./components/language-attribute/language-attribute/language-attribute.component";
 import { NavigationComponent } from "./components/navigation/navigation/navigation.component";
+import { AnimationsComponent } from "./components/animations/animations.component";
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -21,6 +22,7 @@ const appRoutes: Routes = [
   { path: 'ambiguous_links', component: AmbiguousLinksComponent},
   { path: 'language_attribute', component: LanguageAttributeComponent},
   { path: 'navigation', component: NavigationComponent},
+  { path: 'animations', component: AnimationsComponent },
   { path: '',
     redirectTo: '/home',
     pathMatch: 'full'
