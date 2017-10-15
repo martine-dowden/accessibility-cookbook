@@ -84,7 +84,7 @@ export class FocusComponent implements AfterViewInit, AfterContentInit {
     this.changeDetectorRef.detectChanges();
     this.selected = img;
   }
-  toggleAccessibility(event) {
+  toggleAccessibility() {
     this.accessible = !this.accessible;
   }
 

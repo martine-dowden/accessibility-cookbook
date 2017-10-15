@@ -9,7 +9,7 @@
   <p>Clear link text allow users to determine where the link with be taking them, and make a appropriate decisions accordingly.</p>
 
   <div class="actions">
-    <button type="button" mat-raised-button color="accent" (click)="makeAccessible($event)">
+    <button type="button" mat-raised-button color="accent" (click)="makeAccessible()">
       <span *ngIf="accessible">Break Link Accessibility</span>
       <span *ngIf="!accessible">Make Link Accessible</span>
     </button>

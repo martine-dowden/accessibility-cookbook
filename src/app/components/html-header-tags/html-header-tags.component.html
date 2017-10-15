@@ -18,7 +18,7 @@
       <span *ngIf="!hierarchy">Add Hierarchy</span>
     </button>
   </div>
-  <div class="demo-container" #container (window:resize)="onResize($event)">
+  <div class="demo-container" #container (window:resize)="onResize()">
     <div class="demo hierarchy" [ngClass]="{'showTop': hierarchy, 'hideTop': !hierarchy}" [attr.aria-hidden]="hierarchy">
       <div #withHierarchy>
         <h1>Jurasic Era Dinosaurs</h1>
