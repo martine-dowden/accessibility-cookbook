@@ -1,37 +1,39 @@
-import { Component, AfterViewInit, AfterContentInit, trigger, transition, style, animate, ChangeDetectorRef, state, ViewChild, ElementRef } from '@angular/core';
-import { MatSnackBar } from "@angular/material";
+import { Component, AfterViewInit, AfterContentInit,
+  trigger, transition, style, animate,
+  ChangeDetectorRef, state, ViewChild, ElementRef } from '@angular/core';
+import { MatSnackBar } from '@angular/material';
 
 declare var hljs: any;
-type Orientation = ( "prev" | "next" | "none" );
+type Orientation = ( 'prev' | 'next' | 'none' );
 
 @Component({
   selector: 'app-focus',
   templateUrl: './focus.component.html',
   styleUrls: ['./focus.component.scss'],
   animations: [
-    trigger( "imageAnimation", [
+    trigger( 'imageAnimation', [
       state('*', style({ position: 'absolute' })),
       transition( 'void => prev', [
         style({ left: '-100%', opacity: 0  }),
-        animate( "500ms ease-in-out",
+        animate( '500ms ease-in-out',
           style({ left: 0, opacity: 1.0 })
         )
       ]),
       transition( 'prev => void', [
         style({ left: '0%', opacity: 1  }),
-        animate( "500ms ease-in-out",
+        animate( '500ms ease-in-out',
           style({ left: '100%', opacity: 0 })
         )
       ]),
       transition( 'void => next', [
         style({ left: '100%', opacity: 0  }),
-        animate( "500ms ease-in-out",
+        animate( '500ms ease-in-out',
           style({ left: 0, opacity: 1.0 })
         )
       ]),
       transition( 'next => void', [
         style({ left: '0%', opacity: 1  }),
-        animate( "500ms ease-in-out",
+        animate( '500ms ease-in-out',
           style({ left: '-100%', opacity: 0 })
         )
       ]),
@@ -71,25 +73,29 @@ export class FocusComponent implements AfterViewInit, AfterContentInit {
   }
 
   selectImage(img, i) {
-    if ( i < this.current ) { this.orientation = 'prev'; }
-    else if ( i > this.current ) { this.orientation = 'next'; }
-    else { this.orientation = 'none'}
+    if ( i < this.current ) {
+      this.orientation = 'prev';
+    } else if ( i > this.current ) {
+       this.orientation = 'next';
+    } else {
+      this.orientation = 'none';
+    }
     this.current = i;
     this.changeDetectorRef.detectChanges();
-    this.selected = img;  
+    this.selected = img;
   }
   toggleAccessibility(event) {
     this.accessible = !this.accessible;
   }
 
-  onResize() { this.manageHeight() }
+  onResize() { this.manageHeight(); }
 
   manageHeight() {
     this.imageContainer.nativeElement.style.height = document.getElementById(this.selected.id).offsetHeight + 'px';
   }
-  
+
   demoButtonClick() {
-    this.snackBar.open('Demo button click','', { duration: 2000 });
+    this.snackBar.open('Demo button click', '', { duration: 2000 });
   }
 
 }

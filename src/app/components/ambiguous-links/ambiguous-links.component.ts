@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { Observable } from "rxjs/Observable";
-import { Router } from "@angular/router";
+import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
 
 declare var hljs: any;
 
@@ -16,10 +16,10 @@ export class AmbiguousLinksComponent implements AfterViewInit {
   @ViewChild('code3') codeElement3: ElementRef;
   @ViewChild('code4') codeElement4: ElementRef;
 
-  private accessible: boolean;
+  accessible: boolean;
 
   constructor(private router: Router) {}
-  
+
   scrollTo(f) {
     if (this.router.url.match(/(^.*)\#/)) {
       const element = document.querySelector('#' + f);
@@ -36,6 +36,6 @@ export class AmbiguousLinksComponent implements AfterViewInit {
     hljs.highlightBlock(this.codeElement4.nativeElement);
   }
 
-  makeAccessible() { this.accessible = !this.accessible }
+  makeAccessible() { this.accessible = !this.accessible; }
 
 }

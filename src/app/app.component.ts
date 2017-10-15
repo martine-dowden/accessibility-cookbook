@@ -51,5 +51,5 @@ private sub;
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
-  
+
 }

@@ -12,12 +12,12 @@ const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA
 })
 export class FormLabelsComponent implements OnInit, AfterViewInit {
 
-  formAccessibility = false;  
+  formAccessibility = false;
   demoForm: FormGroup;
   idExampleForm: FormGroup;
   fieldsetExample: FormGroup;
   titleExample: FormGroup;
-  
+
   @ViewChild('code') codeElement: ElementRef;
   @ViewChild('code2') codeElement2: ElementRef;
   @ViewChild('code3') codeElement3: ElementRef;
@@ -51,18 +51,18 @@ export class FormLabelsComponent implements OnInit, AfterViewInit {
       areaCode: [''],
       exchange: [''],
       lastDigits: ['']
-    })
+    });
     this.fieldsetExample = this.fb.group({
       hamlet: ['a'],
-    })
+    });
   }
 
-  toggleForm() { this.formAccessibility = !this.formAccessibility}
-  onSubmit() { this.openSnackBar() }
+  toggleForm() { this.formAccessibility = !this.formAccessibility; }
+  onSubmit() { this.openSnackBar(); }
 
   openSnackBar() {
     if (this.demoForm.valid) {
-      this.snackBar.open('Thanks for the feedback','', { duration: 2000 });
+      this.snackBar.open('Thanks for the feedback', '', { duration: 2000 });
     }
   }
 }

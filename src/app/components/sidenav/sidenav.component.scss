@@ -44,15 +44,29 @@ nav {
   li {
     list-style-type: none;
   }
-  
+  .copyright { display: block; }
 }
 
-.content { padding: 0 1.5rem }
+.content { 
+  padding: 0 1.5rem;
+}
+
+.copyright {
+  display: none;
+  font-size: .75rem;
+  padding: 1rem 1.25rem;
+  a { 
+    display: inline;
+    border: none;
+  }
+  img { vertical-align: middle; }
+}
 
 @media ( min-width: $small ) {
   nav {
     position: relative;
     top: 0;
+    .copyright { display: none; }
   }
   button { display: none }
   .container {
@@ -60,6 +74,12 @@ nav {
     flex-direction: column;
     flex-grow: 1;
     height: 100%;
+  }
+  .copyright { 
+    display: block;
+    align-self: flex-end;
+    text-align: center;
+    margin-top: auto;
   }
 }
 

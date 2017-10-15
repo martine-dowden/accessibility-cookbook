@@ -15,13 +15,13 @@ import { trigger, style, animate, transition, keyframes, state } from '@angular/
       })),
       transition('active => inactive', animate('500ms ease-out')),
       transition('inactive => active', animate('500ms ease-in'))
-    ])  
+    ])
   ]
 })
-export class AltTextComponent implements OnInit  {
+export class AltTextComponent implements OnInit, AfterViewChecked  {
 
 accessible = false;
-flip = "inactive";
+flip = 'inactive';
 
 @ViewChild('stairs') stairs;
 @ViewChild('wrapper') wrapper;
@@ -35,11 +35,11 @@ ngAfterViewChecked() {
 
   makeAccessible() {
     this.accessible = !this.accessible;
-    this.flip = (this.flip == 'inactive') ? 'active' : 'inactive';
+    this.flip = (this.flip === 'inactive') ? 'active' : 'inactive';
   }
 
   resize () {
-    this.wrapper.nativeElement.style.height = this.stairs.nativeElement.offsetHeight/16 + 5.375 + 'rem';
+    this.wrapper.nativeElement.style.height = this.stairs.nativeElement.offsetHeight / 16 + 5.375 + 'rem';
     this.captionA.nativeElement.style.width = this.stairs.nativeElement.offsetWidth + 'px';
     this.captionN.nativeElement.style.width = this.stairs.nativeElement.offsetWidth + 'px';
   }

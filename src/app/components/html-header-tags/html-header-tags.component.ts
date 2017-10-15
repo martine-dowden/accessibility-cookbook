@@ -1,4 +1,6 @@
-import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, trigger, state, transition, style, animate, AfterContentInit } from '@angular/core';
+import {
+  Component, OnInit, ElementRef, ViewChild, AfterViewInit,
+  trigger, state, transition, style, animate, AfterContentInit } from '@angular/core';
 
 declare var hljs: any;
 
@@ -18,7 +20,7 @@ export class HtmlHeaderTagsComponent implements OnInit, AfterViewInit, AfterCont
   animation;
   animation2;
 
-  withHierarchyHeight
+  withHierarchyHeight;
   withoutHierarchyHeight;
   containerHeight;
 
@@ -39,17 +41,14 @@ export class HtmlHeaderTagsComponent implements OnInit, AfterViewInit, AfterCont
     this.manageContainerHeight();
   }
 
-  toggleHierarchy() { 
+  toggleHierarchy() {
     this.hierarchy = !this.hierarchy;
   }
 
   manageContainerHeight() {
     this.withHierarchyHeight = this.withHierarchy.nativeElement.offsetHeight;
-    console.log(this.withHierarchyHeight);
     this.withoutHierarchyHeight = this.withoutHierarchy.nativeElement.offsetHeight;
-    console.log(this.withoutHierarchyHeight);
     this.container.nativeElement.style.height = this.withHierarchyHeight > this.withoutHierarchyHeight ? this.withHierarchyHeight + 16 + 'px' : this.withoutHierarchyHeight + 16 +  'px';
-    console.log(this.container.nativeElement.style.height)
   }
 
 }

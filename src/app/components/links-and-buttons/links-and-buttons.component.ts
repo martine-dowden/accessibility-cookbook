@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./links-and-buttons.component.scss']
 })
 export class LinksAndButtonsComponent implements OnInit {
-  
+
   link;
   button;
   neither;
@@ -19,7 +19,7 @@ export class LinksAndButtonsComponent implements OnInit {
   }
 
   isNavigate(val) {
-    if (val == true) {
+    if (val === true) {
       this.link = true;
       this.buttonQuestion = false;
       this.button = undefined;
@@ -33,7 +33,7 @@ export class LinksAndButtonsComponent implements OnInit {
   }
 
   isButton(val) {
-    if (val == true) {
+    if (val === true) {
       this.button = true;
       this.neither = false;
     } else {

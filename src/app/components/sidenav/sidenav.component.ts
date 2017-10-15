@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, style, animate, transition, keyframes, state } from '@angular/animations';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -46,6 +46,7 @@ import { Router } from "@angular/router";
 export class SidenavComponent implements OnInit {
 
   expanded = false;
+  year = new Date().getFullYear();
   category;
 
   constructor(private router: Router) {}
@@ -56,13 +57,16 @@ export class SidenavComponent implements OnInit {
   }
 
   onResize(event) {
-    this.manageNav(event.target.innerWidth); 
+    this.manageNav(event.target.innerWidth);
   }
 
   toggleNav() { this.expanded = !this.expanded; }
-  manageNav(w) { 
-    if (w >= 750) { this.expanded = true; } 
-    else { this.expanded = false; }
+  manageNav(w) {
+    if (w >= 750) {
+      this.expanded = true;
+    } else {
+      this.expanded = false;
+    }
   }
 
 }

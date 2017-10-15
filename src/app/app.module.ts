@@ -23,7 +23,7 @@ import { HtmlHeaderTagsComponent } from './components/html-header-tags/html-head
 import { LinksAndButtonsComponent } from './components/links-and-buttons/links-and-buttons.component';
 import { AmbiguousLinksComponent } from './components/ambiguous-links/ambiguous-links.component';
 import { LanguageAttributeComponent } from './components/language-attribute/language-attribute/language-attribute.component';
-import { NavigationComponent, SectionInfoDialog } from './components/navigation/navigation/navigation.component';
+import { NavigationComponent, SectionInfoDialogComponent } from './components/navigation/navigation/navigation.component';
 import { AnimationsComponent } from './components/animations/animations.component';
 import { ToolsComponent } from './components/tools/tools.component';
 
@@ -42,7 +42,7 @@ import { ToolsComponent } from './components/tools/tools.component';
     AmbiguousLinksComponent,
     LanguageAttributeComponent,
     NavigationComponent,
-    SectionInfoDialog,
+    SectionInfoDialogComponent,
     AnimationsComponent,
     ToolsComponent
   ],
@@ -61,6 +61,6 @@ import { ToolsComponent } from './components/tools/tools.component';
   ],
   providers: [HighlightJsService],
   bootstrap: [AppComponent],
-  entryComponents: [SectionInfoDialog]
+  entryComponents: [SectionInfoDialogComponent]
 })
 export class AppModule { }

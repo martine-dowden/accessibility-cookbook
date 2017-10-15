@@ -1,5 +1,5 @@
-import { Component, OnInit, Inject, ViewChild, ElementRef } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
+import { Component, OnInit, Inject, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 declare var hljs: any;
 
@@ -8,7 +8,7 @@ declare var hljs: any;
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss']
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent implements OnInit, AfterViewInit {
 
   @ViewChild('code') codeElement: ElementRef;
   @ViewChild('code2') codeElement2: ElementRef;
@@ -23,7 +23,7 @@ export class NavigationComponent implements OnInit {
     footer: '<p> The HTML <code>&lt;footer&gt;</code> element represents a footer for its nearest sectioning content or sectioning root element. A footer typically contains information about the author of the section, copyright data or links to related documents.</p>'
   };
 
-  
+
   constructor(public dialog: MatDialog) {}
 
   ngOnInit() {
@@ -36,8 +36,8 @@ export class NavigationComponent implements OnInit {
   }
 
   expand(section) {
-    let dialogRef = this.dialog.open(SectionInfoDialog, {
-      
+    const dialogRef = this.dialog.open(SectionInfoDialogComponent, {
+
       data: {
         title: section,
         content: this.sections[section]
@@ -47,19 +47,19 @@ export class NavigationComponent implements OnInit {
 }
 
 @Component({
-  selector: 'section-info-diablog',
+  selector: 'app-section-info-diablog',
   templateUrl: './section-info-dialog.html',
   styleUrls: ['./section-info-dialog.scss']
 })
 
-export class SectionInfoDialog {
-  
+export class SectionInfoDialogComponent {
+
     constructor(
-      public dialogRef: MatDialogRef<SectionInfoDialog>,
+      public dialogRef: MatDialogRef<SectionInfoDialogComponent>,
       @Inject(MAT_DIALOG_DATA) public data: any) { }
-  
+
     onNoClick(): void {
       this.dialogRef.close();
     }
-  
+
   }
