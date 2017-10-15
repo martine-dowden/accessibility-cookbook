@@ -1,0 +1,94 @@
+@import './mixins';
+
+//  Because Material Theme
+
+$blue: (
+  50 : lighten(#296b6b, 25%),
+  100 : lighten(#296b6b, 20%),
+  200 : lighten(#296b6b, 15%),
+  300 : lighten(#296b6b, 10%),
+  400 : lighten(#296b6b, 5%),
+  500 : #296b6b,
+  600 : darken(#296b6b, 5%),
+  700 : darken(#296b6b, 10%),
+  800 : darken(#296b6b, 15%),
+  900 : darken(#296b6b, 20%),
+  A100 : #ffffff,
+  A200 : #599999,
+  A400 : #296b6b,
+  A700 : #004040,
+  contrast: (
+      50 : #004040,
+      100 : #004040,
+      200 : #ffffff,
+      300 : #ffffff,
+      400 : #ffffff,
+      500 : #ffffff,
+      600 : #ffffff,
+      700 : #ffffff,
+      800 : #ffffff,
+      900 : #ffffff,
+      A100 : #004040,
+      A200 : #ffffff,
+      A400 : #ffffff,
+      A700 : #ffffff,
+  )
+);
+
+$purple: (
+  50 : lighten(#725d7a, 100%),
+  100 : lighten(#725d7a, 80%),
+  200 : lighten(#725d7a, 50%),
+  300 : lighten(#725d7a, 40%),
+  400 : lighten(#725d7a, 20%),
+  500 : #725d7a,
+  600 : darken(#725d7a, 20%),
+  700 : darken(#725d7a, 40%),
+  800 : darken(#725d7a, 60%),
+  900 : darken(#725d7a, 80%),
+  A100: #ffffff,
+  A200: darken(#a18aa9, 11.5%),
+A400: darken(#725d7a, 40%),
+  A700: darken(#46334e, 80%),
+  contrast: (
+      50 : #46334e,
+      100 : #ffffff,
+      200 : #ffffff,
+      300 : #ffffff,
+      400 : #ffffff,
+      500 : #ffffff,
+      600 : #ffffff,
+      700 : #ffffff,
+      800 : #ffffff,
+      900 : #ffffff,
+      A100 : #46334e,
+      A200 : #ffffff,
+      A400 : #ffffff,
+      A700 : #ffffff,
+  )
+);
+
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$candy-app-primary: mat-palette($blue);
+$candy-app-accent:  mat-palette($purple, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$candy-app-warn:    mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($candy-app-theme);
