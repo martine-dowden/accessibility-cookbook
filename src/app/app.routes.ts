@@ -32,4 +32,4 @@ const appRoutes: Routes = [
   { path: '**', component: HomeComponent }
 ];
 
-export const AppRouting = RouterModule.forRoot(appRoutes);
+export const AppRouting = RouterModule.forRoot(appRoutes, { useHash: true });
