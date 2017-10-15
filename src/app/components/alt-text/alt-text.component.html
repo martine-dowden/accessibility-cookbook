@@ -19,11 +19,11 @@
   <div class="tp-wrapper" #wrapper (window:resize)="onResize($event)">
     <div class="tp-box" [@flipState]="flip">
       <div class="tp-box__side tp-box__front" [attr.aria-hidden]="accessible">
-        <img (load)="onResize($event)" #stairs id="stairs" src="/assets/img/stairs.png">
+        <img (load)="onResize($event)" #stairs id="stairs" src="assets/img/stairs.png">
         <caption #captionA ><code>&#x3C;img src=&#x22;stairs.png&#x22;&#x3E;</code></caption>
       </div>
       <div class="tp-box__side tp-box__back" [attr.aria-hidden]="accessible">
-        <img src="/assets/img/pittock-mansion-stairs.png" alt="Pittock Mansion grand staircase">
+        <img src="assets/img/pittock-mansion-stairs.png" alt="Pittock Mansion grand staircase">
         <caption #captionN><code>&#x3C;img src=&#x22;img/stairs.png&#x22; alt=&#x22;Pittock Mansion grand staircase, Oregon&#x22;&#x3E;</code></caption>
       </div>
     </div>
