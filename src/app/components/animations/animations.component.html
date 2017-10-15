@@ -27,7 +27,7 @@
   <div class="demo">
     <div class="carouselle" id="carouselle" aria-live="polite">
       <ng-template ngFor let-sun let-i="index" [ngForOf]="images">
-        <img #image (window:resize)="getHeight(image)" (load)="getHeight(image)" [@imageAnimation]="orientation"  #image *ngIf="currentslide === i + 1" src="../../../../assets/img/{{ sun.fileName }}" alt="{{ sun.alt }}">
+        <img #image (window:resize)="getHeight(image)" (load)="getHeight(image)" [@imageAnimation]="orientation"  #image *ngIf="currentslide === i + 1" src="/assets/img/{{ sun.fileName }}" alt="{{ sun.alt }}">
       </ng-template>
       <div class="dots">
         <ng-template ngFor let-sun let-i="index" [ngForOf]="images">

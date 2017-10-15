@@ -27,7 +27,7 @@
     </div>
     <div class="image-container" #imageContainer>
       <ng-template ngFor let-button [ngForOf]="buttons">
-        <img (load)="manageHeight()" [@imageAnimation]="orientation" id="{{button.id}}" *ngIf="button.id == selected.id" width="800px" src="../../../assets/img/{{button.id }}.png" alt="{{ button.text }}">
+        <img (load)="manageHeight()" [@imageAnimation]="orientation" id="{{button.id}}" *ngIf="button.id == selected.id" width="800px" src="/assets/img/{{button.id }}.png" alt="{{ button.text }}">
       </ng-template></div>
   </div>
 
