@@ -23,6 +23,10 @@ export class ToolsComponent implements OnInit {
     {
       title: 'aXe',
       url: 'https://chrome.google.com/webstore/detail/axe/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US'
+    },
+    {
+      title: 'Funkify',
+      url: 'http://www.funkify.org/'
     }
   ];
 
