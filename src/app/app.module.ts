@@ -26,6 +26,7 @@ import { LanguageAttributeComponent } from './components/language-attribute/lang
 import { NavigationComponent, SectionInfoDialogComponent } from './components/navigation/navigation/navigation.component';
 import { AnimationsComponent } from './components/animations/animations.component';
 import { ToolsComponent } from './components/tools/tools.component';
+import { TablesComponent } from './components/tables/tables.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { ToolsComponent } from './components/tools/tools.component';
     NavigationComponent,
     SectionInfoDialogComponent,
     AnimationsComponent,
-    ToolsComponent
+    ToolsComponent,
+    TablesComponent
   ],
   imports: [
     BrowserModule,

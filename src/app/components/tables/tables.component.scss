@@ -1,0 +1,12 @@
+@import '../../../assets/scss/mixins';
+
+table {
+  border: solid 1px $grey300;
+  background: white;
+}
+caption {
+  text-align: left;
+}
+th { background: lighten($primary-light, 40%); }
+tr { border: solid 1px lighten($primary-light, 30%); }
+td { border: none; }

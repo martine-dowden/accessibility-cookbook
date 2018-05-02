@@ -11,6 +11,7 @@ import { LanguageAttributeComponent } from './components/language-attribute/lang
 import { NavigationComponent } from './components/navigation/navigation/navigation.component';
 import { AnimationsComponent } from './components/animations/animations.component';
 import { ToolsComponent } from './components/tools/tools.component';
+import { TablesComponent } from './components/tables/tables.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
   { path: 'language_attribute', component: LanguageAttributeComponent},
   { path: 'navigation', component: NavigationComponent},
   { path: 'animations', component: AnimationsComponent },
+  { path: 'tables', component: TablesComponent },
   { path: 'tools', component: ToolsComponent },
   { path: '',
     redirectTo: '/home',
