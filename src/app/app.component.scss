@@ -5,8 +5,35 @@
   left: 0;
   right: 0;
   bottom: 0;
-  top: 3rem;
+  top: 0;
   overflow-y: hidden; 
+}
+
+.actions {
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0;
+}
+
+.bar {
+  position: relative;
+  height: 10px;
+  background: $grey200;
+  div {
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    background: $secondary;
+  }
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  background: white;
 }
 
 @media ( min-width: $small ) {

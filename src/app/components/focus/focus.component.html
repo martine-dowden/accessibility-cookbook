@@ -1,18 +1,5 @@
 <h2>Focus</h2>
 <section (window:resize)="onResize()">
-  <h3>Overview &amp; Demo</h3>
-  <div class="spec">
-    <blockquote>
-      <p><strong>Focus Visible:</strong> Any keyboard operable user interface has a mode of operation where the keyboard focus indicator is visible. (Level AA)</p>
-    </blockquote>
-    <cite><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-visible.html" target="_blank" rel="noopener">WCAG 2.0 Success Criteria 2.4.7</a></cite>
-  </div>
-
-  <p>Having a visual indicator of the screen element currently in focus helps users who rely on keyboard to operate the page know with which operation they will interact at any point in time.</p>
-
-  <h3>Demo</h3>
-  <p>Click in the box and then tab through these elements. Notice the difference in experience when element in focus is indicated versus when it is not.</p>
-
   <div class="actions">
     <button type="button" mat-raised-button color="accent" (click)="toggleAccessibility()">
       <span *ngIf="accessible">Remove focus styling</span>
@@ -29,16 +16,6 @@
       <ng-template ngFor let-button [ngForOf]="buttons">
         <img (load)="manageHeight()" [@imageAnimation]="orientation" id="{{button.id}}" *ngIf="button.id == selected.id" width="800px" src="assets/img/{{button.id }}.png" alt="{{ button.text }}">
       </ng-template></div>
-  </div>
-
-</section>
-
-<section>
-
-  <h3>HTML &amp; CSS</h3>
-  <div class="spec-technique">
-    <blockquote><p>"G195: Using an author-supplied, highly visible focus indicator"</p></blockquote>
-    <cite><a href="https://www.w3.org/TR/WCAG20-TECHS/G195.html" target="_blank" rel="noopener">spec-techniques for WCAG 2.0: G195</a></cite>
   </div>
   <h4>Example</h4>
   <button type="button" class="demo-button" (click)="demoButtonClick()">Demo Button</button>
@@ -65,13 +42,3 @@
 </code></pre>
 </section>
 
-<section>
-  <div class="works-cited">
-    <h3>Resources</h3>
-    <cite>:focus. (n.d.). Retrieved October 08, 2017, from <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/CSS/</a></cite>
-    <cite>:focusC15: Using CSS to change the presentation of a user interface component when it receives focus. (n.d.). Retrieved October 08, 2017, from <a href="https://www.w3.org/TR/WCAG20-TECHS/C15.html" target="_blank" rel="noopener">https://www.w3.org/TR/WCAG20-TECHS/C15.html</a></cite>
-    <cite>Focus Visible:Understanding SC 2.4.7. (n.d.). Retrieved October 08, 2017, from <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-visible.html" target="_blank" rel="noopener">https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-visible.html</a></cite>
-    <cite>G195: Using an author-supplied, highly visible focus indicator. (n.d.). Retrieved October 08, 2017, from <a href="https://www.w3.org/TR/WCAG20-TECHS/G195.html" target="_blank" rel="noopener">https://www.w3.org/TR/WCAG20-TECHS/G195.html</a></cite>
-    <cite>Using CSS to highlight the focused element. (n.d.). Retrieved October 08, 2017, from <a href="https://www.w3.org/WAI/GL/wiki/Using_CSS_to_highlight_the_focused_element" target="_blank" rel="noopener">https://www.w3.org/WAI/GL/wiki/Using_CSS_to_highlight_the_focused_element</a></cite>
-  </div>
-</section>

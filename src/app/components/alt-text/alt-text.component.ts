@@ -1,5 +1,7 @@
-import { Component, OnInit, ViewChild, AfterViewInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, AfterViewChecked, ElementRef } from '@angular/core';
 import { trigger, style, animate, transition, keyframes, state } from '@angular/animations';
+
+declare var hljs: any;
 
 @Component({
   selector: 'app-alt-text',
@@ -18,7 +20,7 @@ import { trigger, style, animate, transition, keyframes, state } from '@angular/
     ])
   ]
 })
-export class AltTextComponent implements OnInit, AfterViewChecked  {
+export class AltTextComponent implements OnInit, AfterViewChecked, AfterViewInit  {
 
 accessible = false;
 flip = 'inactive';
@@ -27,6 +29,7 @@ flip = 'inactive';
 @ViewChild('wrapper') wrapper;
 @ViewChild('captionA') captionA;
 @ViewChild('captionN') captionN;
+@ViewChild('code') codeElement: ElementRef;
 
 ngOnInit() {}
 ngAfterViewChecked() {
@@ -46,6 +49,10 @@ ngAfterViewChecked() {
 
   onResize(e) {
     this.resize();
+  }
+
+  ngAfterViewInit() {
+    hljs.highlightBlock(this.codeElement.nativeElement);
   }
 
 }

@@ -1,15 +1,5 @@
 <h2>Alt Text</h2>
 <section>
-  <h3>Overview &amp; Demo</h3>
-  <div class="spec">
-    <blockquote>
-      <p>"1.4.9 Images of Text (No Exception): Images of text are only used for pure decoration or where a particular presentation of text is essential to the information being conveyed. (Level AAA)</p>
-      <p><em>Note:</em> Logotypes (text that is part of a logo or brand name) are considered essential."</p>
-    </blockquote>
-    <cite><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-text-images.html">WCAG 2.0 Success Criteria 1.4.9</a></cite>
-  </div>
-  <p>To allow users utilizing assistive technologies such as screen readers to know what images on a website represent, alternative text must be provided.</p>
-  <h4>Demo</h4>
   <div class="actions">
     <button mat-raised-button color="accent" (click)="makeAccessible()">
       <span *ngIf="!accessible">Make Image Accessible</span>
@@ -29,27 +19,10 @@
     </div>
   </div>
 
-</section>
-<section>
-
-  <h3>The HTML</h3>
-  <p>The alt attribute should provide a description of the image. If content is found within the image, the content should also be available in the alt tag. Same for complex diagram. The same information that is conveyed in the diagram should be available to the user via the alt text.</p>
-  <code>&#x3C;img src=&#x22;stairs.png&#x22; alt=&#x22;Dilapidated stairs.&#x22;&#x3E;</code>
-  <p>If the image does not add any additional information to the page, or is as a purely decorative image the alt text should be left blank.</p>
-  <code>&#x3C;img src=&#x22;border.png&#x22; alt=&#x22;&#x22;&#x3E;</code>
-  <p>ARIA can instead be used to alert the screen reader of the image’s irrelevance to the content.</p>
-  <code>&#x3C;img src=&#x22;border.png&#x22; role=&#x22;presentation&#x22;&#x3E;</code>
-  <p>Although role=”presentation” is not as widely supported as using a null alt attribute (W3C, 2015).</p>
-  <p>Another perk to proper use of alternative text on images is improved SEO.</p>
+  <pre><code #code>
+  &#x3C;img src=&#x22;stairs.png&#x22; alt=&#x22;Dilapidated stairs.&#x22;&#x3E;
+  &#x3C;img src=&#x22;border.png&#x22; alt=&#x22;&#x22;&#x3E;
+  &#x3C;img src=&#x22;border.png&#x22; role=&#x22;presentation&#x22;&#x3E;
+  </code></pre>
 
 </section>
-<section>
-
-  <div class="works-cited">
-    <h3>Resources</h3>
-    <cite>Alternative Text. (n.d.). Retrieved October 07, 2017, from <a href="https://webaim.org/techniques/alttext/" target="_blank" rel="noopener">https://webaim.org/techniques/alttext/</a></cite>
-    <cite>H37: Using alt attributes on img elements. (n.d.). Retrieved October 07, 2017, from <a href="https://www.w3.org/TR/WCAG20-TECHS/H37.html" target="_blank" rel="noopener">https://www.w3.org/TR/WCAG20-TECHS/H37.html</a></cite>
-    <cite>Images Concepts. (n.d.). Retrieved October 07, 2017, from <a href="https://www.w3.org/WAI/tutorials/images/" target="_blank" rel="noopener">https://www.w3.org/WAI/tutorials/images/</a></cite>
-    <cite>Use the alt attribute for your images. (n.d.). Retrieved October 07, 2017, from <a href="https://www.w3.org/QA/Tips/altAttribute" target="_blank" rel="noopener">https://www.w3.org/QA/Tips/altAttribute</a></cite>
-  </div>
-  </section>

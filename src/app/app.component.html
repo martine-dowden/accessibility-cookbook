@@ -1,9 +1,25 @@
 <a class="sr-only" tabindex="0" (click)="changeFocus('main')" (keyup.enter)="changeFocus('main')">Go To Content</a>
-<app-topbar></app-topbar>
 <div class="container">
-  <app-sidenav></app-sidenav>
-  <main>
+  <!-- <app-sidenav></app-sidenav> -->
+  <main id="main">
     <a tabindex="0" id="main" class="sr-only">Main Content</a>
     <router-outlet></router-outlet>
+    <footer>
+      <div class="bar">
+        <div [style.width]="(currentIndex / (pages.length - 1) * 100 )+ '%'"></div>
+      </div>
+      <div class="actions">
+        <span>
+          <a [routerLink]="['/', pages[currentIndex - 1].path]" *ngIf="currentIndex > 0">
+            Previous: {{ pages[currentIndex - 1]?.title }}
+          </a>
+        </span>
+        <span>
+          <a [routerLink]="['/', pages[currentIndex + 1].path]" *ngIf="currentIndex < pages.length - 1">
+            Next: {{ pages[currentIndex + 1]?.title }}
+          </a>
+        </span>
+      </div>
+    </footer>
   </main>
 </div>

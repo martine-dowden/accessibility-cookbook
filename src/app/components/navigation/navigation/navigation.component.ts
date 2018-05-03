@@ -32,7 +32,6 @@ export class NavigationComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     hljs.highlightBlock(this.codeElement.nativeElement);
     hljs.highlightBlock(this.codeElement2.nativeElement);
-    hljs.highlightBlock(this.codeElement3.nativeElement);
   }
 
   expand(section) {

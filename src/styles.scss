@@ -2,6 +2,9 @@
 
 @import 'assets/scss/theme';
 @import 'assets/scss/mixins';
+@import 'assets/fonts/Comfortaa-Bold.ttf';
+@import 'assets/fonts/Comfortaa-Light.ttf';
+@import 'assets/fonts/Comfortaa-Regular.ttf';
 
 * { box-sizing: border-box }
 *:focus { outline-width: 0 }
@@ -56,11 +59,15 @@ section, .section {
   padding: 0 1rem;
   margin-bottom: 3rem;
 }
+section:last-of-type,
+.section:last-of-type {
+  margin-bottom: 4rem;
+}
 
 main {
   overflow-y: scroll;
   position: absolute;
-  top: 3.75rem; right: 0; bottom: 0; left: 0;
+  top: 0; right: 0; bottom: 0; left: 0;
 }
 
 p, li { line-height: 1.5rem; }
@@ -167,11 +174,4 @@ table {
 }
 .mat-dialog-actions {
   justify-content: flex-end;
-}
-
-@media ( min-width: $small ) {
-  main {
-    left: 12rem;
-    top: 0;
-  }
 }

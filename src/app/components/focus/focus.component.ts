@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, AfterContentInit,
   trigger, transition, style, animate,
-  ChangeDetectorRef, state, ViewChild, ElementRef } from '@angular/core';
+  ChangeDetectorRef, state, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 
 declare var hljs: any;
@@ -41,7 +41,7 @@ type Orientation = ( 'prev' | 'next' | 'none' );
   ],
 })
 
-export class FocusComponent implements AfterViewInit, AfterContentInit {
+export class FocusComponent implements AfterViewInit, AfterContentInit, OnDestroy {
 
   orientation: Orientation = 'none';
   @ViewChild('imageContainer') imageContainer;
@@ -96,6 +96,10 @@ export class FocusComponent implements AfterViewInit, AfterContentInit {
 
   demoButtonClick() {
     this.snackBar.open('Demo button click', '', { duration: 2000 });
+  }
+
+  ngOnDestroy() {
+    this.changeDetectorRef.detach();
   }
 
 }

@@ -32,7 +32,6 @@ export class AmbiguousLinksComponent implements AfterViewInit {
   ngAfterViewInit() {
     hljs.highlightBlock(this.codeElement.nativeElement);
     hljs.highlightBlock(this.codeElement2.nativeElement);
-    hljs.highlightBlock(this.codeElement3.nativeElement);
     hljs.highlightBlock(this.codeElement4.nativeElement);
   }
 

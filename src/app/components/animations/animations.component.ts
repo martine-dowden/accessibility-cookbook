@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, trigger, state, transition, style, animate, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ViewChild, trigger, state, transition, style, animate, ChangeDetectorRef, OnDestroy } from '@angular/core';
 
 type Orientation = ( 'prev' | 'next' | 'none' );
 
@@ -36,7 +36,7 @@ type Orientation = ( 'prev' | 'next' | 'none' );
     ])
   ],
 })
-export class AnimationsComponent implements OnInit {
+export class AnimationsComponent implements OnInit, OnDestroy {
 
   images = [
     {
@@ -99,7 +99,7 @@ export class AnimationsComponent implements OnInit {
 
   previous() {
     this.orientation = 'prev';
-    this.changeDetectorRef.detectChanges();
+    this.changeDetectorRef.markForCheck();
     if ( this.currentslide !== 1 ) {
       this.currentslide = this.currentslide - 1;
     } else {
@@ -110,17 +110,17 @@ export class AnimationsComponent implements OnInit {
   jumpTo(image) {
     if (this.currentslide > image ) {
       this.orientation = 'prev';
-      this.changeDetectorRef.detectChanges();
+      this.changeDetectorRef.markForCheck();
     } else {
       this.orientation = 'next';
-      this.changeDetectorRef.detectChanges();
+      this.changeDetectorRef.markForCheck();
     }
     this.currentslide = image;
   }
 
   cycleImages() {
     this.orientation = 'next';
-    this.changeDetectorRef.detectChanges();
+    this.changeDetectorRef.markForCheck();
     if (this.currentslide < this.numslides ) {
       this.currentslide = this.currentslide + 1;
     } else {
@@ -130,6 +130,10 @@ export class AnimationsComponent implements OnInit {
 
   getHeight(elem) {
     document.getElementById('carouselle').style.height = elem.offsetHeight + 'px';
+  }
+
+  ngOnDestroy() {
+    this.changeDetectorRef.detach();
   }
 
 

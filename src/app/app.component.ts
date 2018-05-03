@@ -1,17 +1,51 @@
-import { Component, AfterContentChecked, OnDestroy } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, AfterContentChecked, OnInit, OnDestroy } from '@angular/core';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements  AfterContentChecked, OnDestroy {
+export class AppComponent implements  AfterContentChecked, OnInit, OnDestroy {
 
-public currentRoute;
-private sub;
+  public currentRoute;
+  private sub;
+  private currentIndex = 0;
 
-  constructor(public router: Router, public route: ActivatedRoute) {}
+  private pages = [
+    { path: 'home', title: 'Home'},
+    { path: 'color_contrast', title: 'Color Contrast'},
+    { path: 'alt_text', title: 'Alt Text'},
+    { path: 'form_labels', title: 'Form Labels'},
+    { path: 'focus', title: 'Focus'},
+    { path: 'html_header_tags', title: 'HTML Header Tags'},
+    { path: 'links_and_buttons', title: 'Links and Buttons'},
+    { path: 'ambiguous_links', title: 'Ambiguous Links'},
+    { path: 'language_attribute', title: 'Language Attribute'},
+    { path: 'navigation', title: 'Navigation'},
+    { path: 'animations', title: 'Animations'},
+    { path: 'tables', title: 'Tables'},
+    { path: 'tools', title: 'Tools'},
+  ];
+
+  private next = this.pages[this.currentIndex + 1] ? this.pages[this.currentIndex + 1].path : null;
+  private previous = this.pages[this.currentIndex - 1] ? this.pages[this.currentIndex - 1].path : null;
+
+  constructor(
+    public router: Router,
+    public route: ActivatedRoute
+  ) {}
+
+  ngOnInit() {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        const href = this.router.url;
+        this.currentIndex = this.pages.indexOf(this.pages.find((routes) => `/${routes.path}` === href ));
+        const element = document.querySelector('#main');
+        element.scrollIntoView();
+      }
+    });
+  }
 
   ngAfterContentChecked() {
 

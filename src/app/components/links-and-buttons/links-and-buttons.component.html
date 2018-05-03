@@ -1,11 +1,5 @@
-<h2>Links and Buttons: neither are divs or spans</h2>
+<h2>Links and Buttons</h2>
 <section>
-  <h3>Overview</h3>
-  <div class="spec">
-    <p><strong>Link</strong>: <q>An interactive reference to an internal or external resource that, when activated, causes the user agent to navigate to that resource.</q></p>
-    <p><strong>Button</strong>: <q>An input that allows for user-triggered actions when clicked or pressed.</q></p>
-    <cite><a href="https://www.w3.org/TR/wai-aria/roles#link" target="_blank" rel="noopener">Accessible Rich Internet Applications (WAI-ARIA) 1.0: The Role Model</a></cite>
-  </div>
 
   <div class="demo">
     <h4>What am I?</h4>
@@ -14,7 +8,6 @@
     <p *ngIf="clickMe">I'm actually a div, and if you try to tab to me you will realize that I cannot be tabbed too via keyboard.</p>
   </div>
 
-  <p>The problem with using &#x3C;div&#x3E; or &#x3C;span&#x3E; when a link or a div would be appropriate is the lack of availability in taborder, making them lack keyboard accessibility without extra work. Furthermore, <code>&#x3C;div&#x3E;</code> and <code>&#x3C;span&#x3E;</code> do not expose the approapriate attributes to the scren readers.</p>
   <table>
     <thead>
       <tr>
@@ -81,15 +74,5 @@
         <li><a href="https://www.w3.org/TR/wai-aria/roles#link" target="_blank" rel="noopener">WAI-ARIA Roles: Link</a></li>
       </ul>
     </div>
-  </div>
-</section>
-
-<section>
-  <div class="works-cited">
-    <h3>Resources</h3>
-    <cite>12 Links. (n.d.). Retrieved October 09, 2017, from <a href="https://www.w3.org/TR/html401/struct/links.html#edef-LINK" target="_blank" rel="noopener">https://www.w3.org/TR/html401/struct/links.html#edef-LINK</a></cite>
-    <cite>5. The Roles Model. (n.d.). Retrieved October 09, 2017, from <a href="https://www.w3.org/TR/wai-aria/roles#link" target="_blank" rel="noopener">https://www.w3.org/TR/wai-aria/roles#link</a></cite>
-    <cite>HTML5. (n.d.). Retrieved October 09, 2017, from <a href="https://www.w3.org/TR/html5/editing.html" target="_blank" rel="noopener">https://www.w3.org/TR/html5/editing.html</a></cite>
-    <cite>Links are not buttons. Neither are DIVs and SPANs. (2013, November 25). Retrieved October 09, 2017, from <a href="http://www.karlgroves.com/2013/05/14/links-are-not-buttons-neither-are-divs-and-spans/" target="_blank" rel="noopener">http://www.karlgroves.com/2013/05/14/links-are-not-buttons-neither-are-divs-and-spans/</a></cite>
   </div>
 </section>
