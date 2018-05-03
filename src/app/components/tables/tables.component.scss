@@ -10,3 +10,6 @@ caption {
 th { background: lighten($primary-light, 40%); }
 tr { border: solid 1px lighten($primary-light, 30%); }
 td { border: none; }
+tr:first-of-type td:first-of-type {
+  background: $grey200;
+}

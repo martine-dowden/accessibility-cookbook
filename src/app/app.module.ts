@@ -27,6 +27,9 @@ import { NavigationComponent, SectionInfoDialogComponent } from './components/na
 import { AnimationsComponent } from './components/animations/animations.component';
 import { ToolsComponent } from './components/tools/tools.component';
 import { TablesComponent } from './components/tables/tables.component';
+import { SponsorComponent } from './components/sponsor/sponsor.component';
+import { TitleComponent } from './components/title/title.component';
+import { MartineComponent } from './components/martine/martine.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,10 @@ import { TablesComponent } from './components/tables/tables.component';
     SectionInfoDialogComponent,
     AnimationsComponent,
     ToolsComponent,
-    TablesComponent
+    TablesComponent,
+    SponsorComponent,
+    TitleComponent,
+    MartineComponent
   ],
   imports: [
     BrowserModule,

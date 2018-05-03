@@ -1,0 +1,30 @@
+@import '../../../assets/scss/mixins';
+
+div {
+  width: 90%;
+  margin: 1rem auto;
+  text-align: right;
+}
+
+div:first-of-type {
+  @include card;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0 1rem;
+  margin: 2.5% auto 0;
+  background: $primary;
+  color: white;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+img {
+  width: 5rem;
+  vertical-align: top;
+  margin-top: -.5rem;
+}

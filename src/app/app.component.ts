@@ -13,18 +13,21 @@ export class AppComponent implements  AfterContentChecked, OnInit, OnDestroy {
   private currentIndex = 0;
 
   private pages = [
+    { path: 'title', title: 'Title'},
+    { path: 'sponsor', title: 'Slack'},
+    { path: 'martine', title: 'About Me'},
     { path: 'home', title: 'Home'},
-    { path: 'color_contrast', title: 'Color Contrast'},
-    { path: 'alt_text', title: 'Alt Text'},
-    { path: 'form_labels', title: 'Form Labels'},
-    { path: 'focus', title: 'Focus'},
-    { path: 'html_header_tags', title: 'HTML Header Tags'},
-    { path: 'links_and_buttons', title: 'Links and Buttons'},
-    { path: 'ambiguous_links', title: 'Ambiguous Links'},
     { path: 'language_attribute', title: 'Language Attribute'},
     { path: 'navigation', title: 'Navigation'},
-    { path: 'animations', title: 'Animations'},
+    { path: 'html_header_tags', title: 'HTML Header Tags'},
     { path: 'tables', title: 'Tables'},
+    { path: 'links_and_buttons', title: 'Links and Buttons'},
+    { path: 'ambiguous_links', title: 'Ambiguous Links'},
+    { path: 'focus', title: 'Focus'},
+    { path: 'color_contrast', title: 'Color Contrast'},
+    { path: 'form_labels', title: 'Form Labels'},
+    { path: 'alt_text', title: 'Alt Text'},
+    { path: 'animations', title: 'Animations'},
     { path: 'tools', title: 'Tools'},
   ];
 

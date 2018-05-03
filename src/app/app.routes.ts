@@ -12,8 +12,14 @@ import { NavigationComponent } from './components/navigation/navigation/navigati
 import { AnimationsComponent } from './components/animations/animations.component';
 import { ToolsComponent } from './components/tools/tools.component';
 import { TablesComponent } from './components/tables/tables.component';
+import { SponsorComponent } from './components/sponsor/sponsor.component';
+import { TitleComponent } from './components/title/title.component';
+import { MartineComponent } from './components/martine/martine.component';
 
 const appRoutes: Routes = [
+  { path: 'title', component: TitleComponent },
+  { path: 'sponsor', component: SponsorComponent },
+  { path: 'martine', component: MartineComponent },
   { path: 'home', component: HomeComponent },
   { path: 'color_contrast', component: ColorContrastComponent },
   { path: 'alt_text', component: AltTextComponent },

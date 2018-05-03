@@ -1,0 +1,38 @@
+@import '../../../assets/scss/mixins';
+
+img {
+  width: 10rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  & > div > h2.projects {
+    color: $primary;
+    text-align: center;
+    border-bottom: solid 1px $grey300;
+    padding-bottom: .75rem;
+    img {
+      display: inline-block;
+      margin: 0;
+      vertical-align: middle;
+    }
+  }
+  & > div {
+    @include card;
+    flex-basis: 45%;
+    img {
+      display: block;
+      margin: 2rem auto;
+    }
+  }
+}
+
+h1 { margin: 1rem 1.5rem; }
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  div { padding-bottom: 1rem; }
+}
